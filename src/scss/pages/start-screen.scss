@@ -1,0 +1,35 @@
+.start-screen-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f3131;
+    background-image: url(/assets/images/start-screen/controller-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+    > .start-screen-headline {
+        color: white;
+    
+        > h2 {
+            font-size: 60px;
+            font-weight: 200;
+            margin: 0;
+        }
+
+        > h1 {
+            font-size: 140px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+    }
+}
