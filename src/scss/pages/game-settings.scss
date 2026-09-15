@@ -1,5 +1,7 @@
 .settings-content {
     height: 100%;
+    max-width: 1440px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +93,7 @@
 }
 
 .custom-checkbox {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 400;
     margin-left: 40px;
     display: flex;
@@ -100,6 +102,18 @@
 
     input[type="checkbox"] {
         display: none;
+    }
+
+    .selected-arrow-img {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked~.selected-arrow-img {
+        display: inline-block;
+    }
+
+    &:has(input:checked) {
+        font-weight: bold;
     }
 }
 
@@ -112,16 +126,16 @@
     display: inline-block;
 
     &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: black;
-      transform: translate(-50%, -50%);
-      opacity: 0;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: black;
+        transform: translate(-50%, -50%);
+        opacity: 0;
     }
 }
 
@@ -129,7 +143,7 @@ input[type="checkbox"]:checked+.circle {
     border: 1px solid black;
 
     &::after {
-      opacity: 1;
+        opacity: 1;
     }
 }
 
