@@ -1,0 +1,84 @@
+.settings-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0 170px 0 170px;
+}
+
+.settings-headline {
+    font-size: 36px;
+    position: relative;
+    margin-bottom: 40px;
+
+    > h2 {
+        margin: 0;
+    }
+
+    > img {
+        position: absolute;
+        top: 55px;
+        left: -20px;
+    }
+}
+
+.settings-content-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings-box-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-themes-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+.player-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+.board-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    > h3 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+.settings-box-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.election-line {
+    height: 80px;
+    width: 460px;
+    background-color: lightgray;
+}

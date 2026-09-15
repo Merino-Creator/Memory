@@ -4,4 +4,14 @@
 body {
     margin: 0;
     height: 100vh;
+    font-family: "Red Rose";
+}
+
+@font-face {
+    font-family: "Red Rose";
+    src: url(/public/assets/fonts/RedRose-VariableFont_wght.ttf);
+}
+
+* {
+    // outline: 1px solid red;
 }
