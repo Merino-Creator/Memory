@@ -12,11 +12,11 @@
     position: relative;
     margin-bottom: 40px;
 
-    > h2 {
+    >h2 {
         margin: 0;
     }
 
-    > img {
+    >img {
         position: absolute;
         top: 55px;
         left: -20px;
@@ -27,6 +27,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    font-family: 'Almarai';
 }
 
 .settings-box-left {
@@ -35,16 +36,28 @@
     justify-content: space-between;
 }
 
+.game-themes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .game-themes-head {
     display: flex;
     align-items: center;
     gap: 8px;
 
-    > h3 {
+    >h3 {
         margin: 0;
         font-size: 24px;
         font-weight: 600;
     }
+}
+
+.choose-player {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .player-head {
@@ -52,11 +65,17 @@
     align-items: center;
     gap: 8px;
 
-    > h3 {
+    >h3 {
         margin: 0;
         font-size: 24px;
         font-weight: 600;
     }
+}
+
+.board-size {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .board-head {
@@ -64,10 +83,53 @@
     align-items: center;
     gap: 8px;
 
-    > h3 {
+    >h3 {
         margin: 0;
         font-size: 24px;
         font-weight: 600;
+    }
+}
+
+.custom-checkbox {
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+}
+
+.circle {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: black;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+}
+
+input[type="checkbox"]:checked+.circle {
+    border: 1px solid black;
+
+    &::after {
+      opacity: 1;
     }
 }
 
