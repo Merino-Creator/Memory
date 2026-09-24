@@ -157,4 +157,8 @@ input[type="radio"]:checked+.circle {
     height: 80px;
     width: 460px;
     background-color: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
 }
