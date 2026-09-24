@@ -153,12 +153,25 @@ input[type="radio"]:checked+.circle {
     gap: 40px;
 }
 
+.preview-img {
+    width: 460px;
+}
+
 .election-line {
     height: 80px;
-    width: 460px;
-    background-color: lightgray;
+    width: fit-content;
+    background-color: #F6F6F6;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 20px;
+    box-sizing: border-box;
+    padding: 0 12px 0 12px;
+    gap: 12px;
+}
+
+.start-btn {
+    padding: 0;
+    border: none;
+    height: 53px;
 }
