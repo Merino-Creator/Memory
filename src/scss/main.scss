@@ -1,5 +1,8 @@
 @use 'pages/start-screen.scss';
 @use 'pages/game-settings.scss';
+@use 'layout/header.scss';
+@use 'themes/code-vibes.scss';
+@use 'themes/da-projects.scss';
 
 body {
     margin: 0;

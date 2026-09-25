@@ -55,7 +55,8 @@ bindRadioGroup('player', playerValueEl, 'player');
 bindRadioGroup('board', boardValueEl, 'board');
 
 startBtn?.addEventListener('click', () => {
+    localStorage.setItem('theme', selections.theme);
+    localStorage.setItem('player', selections.player);
+    localStorage.setItem('board', selections.board);
     window.location.href = './game.html';
 });
-
-document.body.dataset.theme = 'da-projects';
