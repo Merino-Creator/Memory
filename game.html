@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,14 @@
 
 <body>
 
-    <h1>INGAME</h1>
-    
+    <header class="game-header">
+        <div class="player-points"></div>
+        <div class="player-turn">Current player:<span id="currentPlayer"></span></div>
+        <button class="exit-game-btn"></button>
+    </header>
+
+    <div id="gameBoard" class="game-board"></div>
+
 </body>
 
 <script type="module" src="./src/main.ts"></script>

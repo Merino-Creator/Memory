@@ -57,3 +57,5 @@ bindRadioGroup('board', boardValueEl, 'board');
 startBtn?.addEventListener('click', () => {
     window.location.href = './game.html';
 });
+
+document.body.dataset.theme = 'da-projects';
