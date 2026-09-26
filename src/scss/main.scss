@@ -1,14 +1,17 @@
 @use 'pages/start-screen.scss';
 @use 'pages/game-settings.scss';
 @use 'layout/header.scss';
+@use 'layout/grid.scss';
 @use 'themes/code-vibes.scss';
 @use 'themes/da-projects.scss';
+@use 'components/card.scss';
 
 body {
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     font-family: "Red Rose";
 }
 

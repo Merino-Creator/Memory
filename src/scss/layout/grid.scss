@@ -1,0 +1,6 @@
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(var(--columns, 4), 120px);
+    gap: 12px;
+    align-items: center;
+}

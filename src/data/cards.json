@@ -1,0 +1,22 @@
+{
+    "motifs": [
+        "public/assets/images/code-theme/cards/angular-card.png",
+        "public/assets/images/code-theme/cards/bootstrap-card.png",
+        "public/assets/images/code-theme/cards/console-card.png",
+        "public/assets/images/code-theme/cards/css-card.png",
+        "public/assets/images/code-theme/cards/database-card.png",
+        "public/assets/images/code-theme/cards/django-card.png",
+        "public/assets/images/code-theme/cards/firebase-card.png",
+        "public/assets/images/code-theme/cards/git-card.png",
+        "public/assets/images/code-theme/cards/github-card.png",
+        "public/assets/images/code-theme/cards/html-card.png",
+        "public/assets/images/code-theme/cards/js-card.png",
+        "public/assets/images/code-theme/cards/node-card.png",
+        "public/assets/images/code-theme/cards/python-card.png",
+        "public/assets/images/code-theme/cards/react-card.png",
+        "public/assets/images/code-theme/cards/sass-card.png",
+        "public/assets/images/code-theme/cards/ts-card.png",
+        "public/assets/images/code-theme/cards/vscode-card.png",
+        "public/assets/images/code-theme/cards/vue-card.png"
+    ]
+}

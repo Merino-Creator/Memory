@@ -1,0 +1,33 @@
+.card {
+    height: 120px;
+    aspect-ratio: 1 / 1;
+    border: none;
+    background-color: transparent;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 300ms ease-in-out;
+    }
+
+    &__face {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        background-image: url("/public/assets/images/code-theme/cards/code-card-bg.png");
+        background-size: cover;
+        background-position: center;
+
+
+        &--back {
+            transform: rotateY(180deg);
+            background-image: none;
+        }
+    }
+
+    &.is-flipped .card__inner {
+        transform: rotateY(180deg);
+    }
+}
