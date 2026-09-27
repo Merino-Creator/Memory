@@ -2,8 +2,56 @@ body[data-theme="code-vibes"] {
     background-color: #303131;
 
     .player-points {
-        width: 300px;
-        height: 100%;
         background-color: #415652;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-sizing: border-box;
+        padding: 12px 12px 12px 12px;
+
+        &__box {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            >img {
+                height: 12px;
+            }
+
+            &--blue {
+                color: #2BB1FF;
+                margin: 0;
+            }
+
+            &--orange {
+                color: #F58E39;
+                margin: 0;
+            }
+        }
+    }
+
+    .player-turn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        >p {
+            color: white;
+        }
+
+        >img {
+            height: 16px;
+        }
+    }
+
+    .exit-game-btn {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        >img {
+            height: 44px;
+        }
     }
 }

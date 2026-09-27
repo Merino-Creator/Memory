@@ -11,9 +11,21 @@
 <body>
 
     <header class="game-header">
-        <div class="player-points"></div>
-        <div class="player-turn">Current player:<span id="currentPlayer"></span></div>
-        <button class="exit-game-btn"></button>
+        <div class="player-points">
+            <div class="player-points__box">
+                <img src="/public/assets/images/code-theme/game-screen/blue-player.png" alt="">
+                <p class="player-points__box--blue">Blue:</p>
+            </div>
+            <div class="player-points__box">
+                <img src="/public/assets/images/code-theme/game-screen/orange-player.png" alt="">
+                <p class="player-points__box--orange">Orange:</p>
+            </div>
+        </div>
+        <div class="player-turn">
+            <p>Current player:</p>
+            <img src="/public/assets/images/code-theme/game-screen/blue-player.png" alt="">
+        </div>
+        <button class="exit-game-btn"><img src="/public/assets/images/buttons/exit-btn.png" alt=""></button>
     </header>
 
     <div id="gameBoard" class="game-board"></div>
