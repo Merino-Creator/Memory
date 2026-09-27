@@ -1,5 +1,5 @@
 {
-    "motifs": [
+    "it-motifs": [
         "public/assets/images/code-theme/cards/angular-card.png",
         "public/assets/images/code-theme/cards/bootstrap-card.png",
         "public/assets/images/code-theme/cards/console-card.png",
@@ -18,5 +18,26 @@
         "public/assets/images/code-theme/cards/ts-card.png",
         "public/assets/images/code-theme/cards/vscode-card.png",
         "public/assets/images/code-theme/cards/vue-card.png"
+    ],
+    
+    "da-motifs": [
+        "public/assets/images/da-projects-theme/cards/chef-card.png",
+        "public/assets/images/da-projects-theme/cards/cuisine-card.png",
+        "public/assets/images/da-projects-theme/cards/currency-card.png",
+        "public/assets/images/da-projects-theme/cards/dabubble-card.png",
+        "public/assets/images/da-projects-theme/cards/delivery-card.png",
+        "public/assets/images/da-projects-theme/cards/eggs-card.png",
+        "public/assets/images/da-projects-theme/cards/elpollo-card.png",
+        "public/assets/images/da-projects-theme/cards/join-card.png",
+        "public/assets/images/da-projects-theme/cards/person-card.png",
+        "public/assets/images/da-projects-theme/cards/pokedex-card.png",
+        "public/assets/images/da-projects-theme/cards/pokemon-card.png",
+        "public/assets/images/da-projects-theme/cards/ramen-card.png",
+        "public/assets/images/da-projects-theme/cards/ramen-two-card.png",
+        "public/assets/images/da-projects-theme/cards/sakura-card.png",
+        "public/assets/images/da-projects-theme/cards/smiley-card.png",
+        "public/assets/images/da-projects-theme/cards/tictac-card.png",
+        "public/assets/images/da-projects-theme/cards/v-card.png",
+        "public/assets/images/da-projects-theme/cards/wave-card.png"
     ]
 }

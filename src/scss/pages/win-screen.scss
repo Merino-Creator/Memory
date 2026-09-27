@@ -1,0 +1,26 @@
+.confetti-img {
+    width: 1200px;
+    height: 350px;
+}
+
+.winner-headline-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > h3 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    > h2 {
+        font-size: 48px;
+        color: #2BB1FF;
+    }
+}
+
+.back-btn {
+    margin-top: 40px;
+    padding: 0;
+    border: none;
+}

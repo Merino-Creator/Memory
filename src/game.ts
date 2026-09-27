@@ -8,8 +8,10 @@ const themeKeys: Record<string, string> = {
     'DA Projects theme': 'da-projects',
 };
 
-if (themeLabel && themeKeys[themeLabel]) {
-    document.body.dataset.theme = themeKeys[themeLabel];
+const currentTheme = themeLabel ? themeKeys[themeLabel] : 'code-vibes';
+
+if (currentTheme) {
+    document.body.dataset.theme = currentTheme;
 }
 
 const boardSizeLabel = localStorage.getItem('board');
@@ -24,8 +26,14 @@ const columnsByBoard: Record<string, number> = {
 const cardCount = Number(boardSizeLabel?.split(' ')[0]) || 16;
 const columns = columnsByBoard[boardSizeLabel ?? ''] ?? 4;
 
+const motifKeysByTheme: Record<string, keyof typeof cardsData> = {
+    'code-vibes': 'it-motifs',
+    'da-projects': 'da-motifs',
+};
+
+const motifKey = motifKeysByTheme[currentTheme] ?? 'it-motifs';
 const pairsNeeded = cardCount / 2;
-const selectedMotifs = cardsData.motifs.slice(0, pairsNeeded);
+const selectedMotifs = cardsData[motifKey].slice(0, pairsNeeded);
 const cardMotifs = [...selectedMotifs, ...selectedMotifs];
 
 if (gameBoard) {
