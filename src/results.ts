@@ -19,3 +19,9 @@ if (window.location.pathname.includes('game-over')) {
         window.location.href = './game-settings.html';
     }, 3000);
 }
+
+const finalBlue = document.querySelector<HTMLSpanElement>('#finalScoreBlue');
+const finalOrange = document.querySelector<HTMLSpanElement>('#finalScoreOrange');
+
+if (finalBlue) finalBlue.textContent = localStorage.getItem('scoreBlue') ?? '0';
+if (finalOrange) finalOrange.textContent = localStorage.getItem('scoreOrange') ?? '0';

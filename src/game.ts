@@ -50,6 +50,14 @@ const playerChoice = (localStorage.getItem('player') ?? 'Blue').toLowerCase();
 let currentPlayer = playerChoice;
 const points: Record<string, number> = { blue: 0, orange: 0 };
 
+const scoreBlueEl = document.querySelector<HTMLSpanElement>('#scoreBlue');
+const scoreOrangeEl = document.querySelector<HTMLSpanElement>('#scoreOrange');
+
+function updateScore() {
+    if (scoreBlueEl) scoreBlueEl.textContent = String(points.blue);
+    if (scoreOrangeEl) scoreOrangeEl.textContent = String(points.orange);
+}
+
 let flippedCards: HTMLButtonElement[] = [];
 let isLocked = false;
 let matchedPairs = 0;
@@ -70,6 +78,7 @@ function checkMatch() {
 
     if (first.dataset.motif === second.dataset.motif) {
         points[currentPlayer]++;
+        updateScore();
         matchedPairs++;
         flippedCards = [];
         isLocked = false;
@@ -89,6 +98,9 @@ function checkMatch() {
 }
 
 function endGame() {
+    localStorage.setItem('scoreBlue', String(points.blue));
+    localStorage.setItem('scoreOrange', String(points.orange));
+    
     if (points.blue === points.orange) {
         window.location.href = './draw.html';
         return;
