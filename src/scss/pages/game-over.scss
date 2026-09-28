@@ -1,52 +1,54 @@
-.game-over-body {
-    justify-content: center;
-}
+body[data-theme="code-vibes"] {
+    &.game-over-body {
+        justify-content: center;
+    }
 
-.game-over-img {
-    height: 120px;
-}
+    .game-over-img {
+        height: 120px;
+    }
 
-.score {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
-
-    &__box {
+    .score {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 20px;
-        background-color: #415652;
-        box-sizing: border-box;
-        padding: 12px;
+        margin-top: 60px;
 
-        &__blue {
-            color: #2BB1FF;
+        &__box {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 20px;
+            background-color: #415652;
+            box-sizing: border-box;
+            padding: 12px;
 
-            >p {
-                margin: 0;
+            &__blue {
+                color: #2BB1FF;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                >p {
+                    margin: 0;
+                }
+
+                >img {
+                    height: 16px;
+                }
             }
 
-            >img {
-                height: 16px;
-            }
-        }
+            &__orange {
+                color: #F58E39;
+                display: flex;
+                align-items: center;
+                gap: 8px;
 
-        &__orange {
-            color: #F58E39;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+                >p {
+                    margin: 0;
+                }
 
-            >p {
-                margin: 0;
-            }
-
-            >img {
-                height: 16px;
+                >img {
+                    height: 16px;
+                }
             }
         }
     }
