@@ -1,0 +1,25 @@
+.exit-dialog {
+    max-width: 540px;
+    width: 100%;
+    height: 160px;
+
+    &__headline {
+        justify-self: center;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &__buttons {
+        justify-self: center;
+    }
+
+    &__btn {
+        border: none;
+        padding: 0;
+        background-color: transparent;
+
+        &-img {
+            height: 60px;
+        }
+    }
+}

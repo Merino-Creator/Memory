@@ -100,7 +100,7 @@ function checkMatch() {
 function endGame() {
     localStorage.setItem('scoreBlue', String(points.blue));
     localStorage.setItem('scoreOrange', String(points.orange));
-    
+
     if (points.blue === points.orange) {
         window.location.href = './draw.html';
         return;
@@ -137,3 +137,11 @@ if (gameBoard) {
         gameBoard.appendChild(card);
     });
 }
+
+function openDialog() {
+    const mydialog = document.getElementById('exitDialog') as HTMLDialogElement;
+    mydialog?.showModal();
+}
+
+const openBtn = document.getElementById('openBtn');
+openBtn?.addEventListener('click', openDialog);

@@ -25,8 +25,21 @@
             <p>Current player:</p>
             <img src="/public/assets/images/code-theme/game-screen/blue-player.png" alt="">
         </div>
-        <button class="exit-game-btn"><img src="/public/assets/images/buttons/exit-btn.png" alt=""></button>
+        <button class="exit-game-btn" id="openBtn"><img src="/public/assets/images/buttons/exit-btn.png"
+                alt=""></button>
     </header>
+
+    <dialog id="exitDialog" class="exit-dialog">
+        <h2 class="exit-dialog__headline">Are you sure you want to quit the game?</h2>
+        <div class="exit-dialog__buttons">
+            <button class="exit-dialog__btn exit-dialog__btn--cancel">
+                <img class="exit-dialog__btn-img" src="/public/assets/images/code-theme/buttons/back-btn-it.png" alt="">
+            </button>
+            <button class="exit-dialog__btn exit-dialog__btn--confirm">
+                <img class="exit-dialog__btn-img" src="/public/assets/images/code-theme/buttons/exit-btn-it.png" alt="">
+            </button>
+        </div>
+    </dialog>
 
     <div id="gameBoard" class="game-board"></div>
 
