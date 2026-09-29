@@ -141,7 +141,15 @@ if (gameBoard) {
 function openDialog() {
     const mydialog = document.getElementById('exitDialog') as HTMLDialogElement;
     mydialog?.showModal();
+
+    document.getElementById('cancelExitBtn')?.addEventListener('click', () => {
+    mydialog.close();
+});
 }
 
 const openBtn = document.getElementById('openBtn');
 openBtn?.addEventListener('click', openDialog);
+
+document.getElementById('confirmExitBtn')?.addEventListener('click', () => {
+    window.location.href = './game-settings.html';
+});
