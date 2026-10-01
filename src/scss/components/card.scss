@@ -20,7 +20,7 @@
         background-image: var(--card-back-bg);
         background-size: cover;
         background-position: center;
-        border-radius: var(--da-card-border-radius);
+        border-radius: var(--card-border-radius);
 
         &--back {
             transform: rotateY(180deg);

@@ -3,43 +3,65 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    padding: 20px 40px;
-    height: 100px;
+    padding: 20px;
+    height: 80px;
     max-width: 1200px;
     width: 100%;
     margin-top: 10px;
     margin-bottom: 40px;
     background-color: var(--header-bg);
     border-radius: 8px;
+    font-family: var(--header-font);
+    font-weight: var(--header-font-weight);
 }
 
 .player-points {
     background-color: var(--points-bg);
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 20px;
     box-sizing: border-box;
     padding: 12px;
+    border-radius: var(--points-box-radius);
 
     &__box {
         display: flex;
         align-items: center;
         gap: 4px;
 
-        > img {
-            height: 12px;
+        > p {
+            margin: 0;
         }
 
         &--blue {
             color: var(--blue-color);
-            margin: 0;
+
+            .player-points__icon {
+                background-image: var(--blue-player-img);
+            }
         }
 
         &--orange {
             color: var(--orange-color);
-            margin: 0;
+
+            .player-points__icon {
+                background-image: var(--orange-player-img);
+            }
         }
     }
+
+    &__icon {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.player-points__label {
+    display: var(--label-display, inline);
 }
 
 .player-turn {
@@ -61,8 +83,10 @@
     padding: 0;
     background-color: transparent;
     cursor: pointer;
-
-    > img {
-        height: 44px;
-    }
+    height: 44px;
+    width: 140px;
+    background-image: var(--exit-btn-img);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }

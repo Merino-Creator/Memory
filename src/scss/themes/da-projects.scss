@@ -6,7 +6,14 @@ body[data-theme="da-projects"] {
     --orange-color: #F58E39;
     --text-color: #1E7594;
     --card-back-bg: url("/public/assets/images/da-projects-theme/cards/da-card-bg.png");
-    --da-card-border-radius: 16px;
+    --card-border-radius: 16px;
+    --points-box-radius: 12px;
+    --header-font: "Figtree";
+    --header-font-weight: 700;
+    --exit-btn-img: url("/public/assets/images/da-projects-theme/buttons/exit-btn-da.png");
+    --blue-player-img: url("/public/assets/images/da-projects-theme/game-screen/blue-player.png");
+    --orange-player-img: url("/public/assets/images/da-projects-theme/game-screen/orange-player.png");
+    --label-display: none;
 
     background-color: var(--body-bg);
 }

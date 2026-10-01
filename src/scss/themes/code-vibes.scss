@@ -6,6 +6,14 @@ body[data-theme="code-vibes"] {
     --orange-color: #F58E39;
     --text-color: white;
     --card-back-bg: url("/public/assets/images/code-theme/cards/code-card-bg.png");
+    --card-border-radius: 0;
+    --points-box-radius: 0;
+    --header-font: "Red Rose";
+    --header-font-weight: 400;
+    --exit-btn-img: url("/public/assets/images/code-theme/buttons/exit-btn-it.png");
+    --blue-player-img: url("/public/assets/images/code-theme/game-screen/blue-player.png");
+    --orange-player-img: url("/public/assets/images/code-theme/game-screen/orange-player.png");
+    --label-display: inline;
 
     background-color: var(--body-bg);
 }

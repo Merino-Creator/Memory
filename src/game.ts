@@ -66,10 +66,18 @@ function updateScore() {
 /* ---------- Anzeige: aktueller Spieler ---------- */
 const currentPlayerImg = document.querySelector<HTMLImageElement>('#currentPlayerImg');
 
-const playerImages: Record<string, string> = {
-    blue: '/public/assets/images/code-theme/game-screen/blue-player.png',
-    orange: '/public/assets/images/code-theme/game-screen/orange-player.png',
+const playerImagesByTheme: Record<string, Record<string, string>> = {
+    'code-vibes': {
+        blue: '/public/assets/images/code-theme/game-screen/blue-player.png',
+        orange: '/public/assets/images/code-theme/game-screen/orange-player.png',
+    },
+    'da-projects': {
+        blue: '/public/assets/images/da-projects-theme/game-screen/blue-player.png',
+        orange: '/public/assets/images/da-projects-theme/game-screen/orange-player.png',
+    },
 };
+
+const playerImages = playerImagesByTheme[currentTheme] ?? playerImagesByTheme['code-vibes'];
 
 function updateCurrentPlayerDisplay() {
     if (currentPlayerImg) {
