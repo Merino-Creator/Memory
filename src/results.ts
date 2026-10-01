@@ -25,3 +25,14 @@ const finalOrange = document.querySelector<HTMLSpanElement>('#finalScoreOrange')
 
 if (finalBlue) finalBlue.textContent = localStorage.getItem('scoreBlue') ?? '0';
 if (finalOrange) finalOrange.textContent = localStorage.getItem('scoreOrange') ?? '0';
+
+const winnerNameEl = document.querySelector<HTMLHeadingElement>('#winnerName');
+const winnerPawnImg = document.querySelector<HTMLImageElement>('#winnerPawnImg');
+
+if (winner === 'blue') {
+    if (winnerNameEl) winnerNameEl.textContent = 'BLUE PLAYER';
+    if (winnerPawnImg) winnerPawnImg.src = '/public/assets/images/code-theme/winner-screen/blue-pawn.png';
+} else if (winner === 'orange') {
+    if (winnerNameEl) winnerNameEl.textContent = 'ORANGE PLAYER';
+    if (winnerPawnImg) winnerPawnImg.src = '/public/assets/images/code-theme/winner-screen/orange-pawn.png';
+}
