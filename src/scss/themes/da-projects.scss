@@ -14,6 +14,10 @@ body[data-theme="da-projects"] {
     --blue-player-img: url("/public/assets/images/da-projects-theme/game-screen/blue-player.png");
     --orange-player-img: url("/public/assets/images/da-projects-theme/game-screen/orange-player.png");
     --label-display: none;
+    --dialog-bg: #F0F6F9;
+    --dialog-radius: 16px;
+    --dialog-cancel-img: url("/public/assets/images/da-projects-theme/buttons/back-btn-da.png");
+    --dialog-confirm-img: url("/public/assets/images/da-projects-theme/buttons/exit-game-btn-da.png");
 
     background-color: var(--body-bg);
 }
