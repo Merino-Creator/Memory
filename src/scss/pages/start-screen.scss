@@ -32,4 +32,16 @@
             margin-bottom: 10px;
         }
     }
+
+    &-btn{
+        content: url('/assets/images/buttons/play-btn.png');
+        height: 100px;
+        width: 250px;
+    }
+
+    &-btn:hover {
+        content: url('/assets/images/buttons/play-btn-hover.png');
+        height: 100px;
+        width: 250px;
+    }
 }
