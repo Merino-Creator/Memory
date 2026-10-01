@@ -50,6 +50,11 @@ const playerChoice = (localStorage.getItem('player') ?? 'Blue').toLowerCase();
 let currentPlayer = playerChoice;
 const points: Record<string, number> = { blue: 0, orange: 0 };
 
+let flippedCards: HTMLButtonElement[] = [];
+let isLocked = false;
+let matchedPairs = 0;
+
+/* ---------- Anzeige: Punktestand ---------- */
 const scoreBlueEl = document.querySelector<HTMLSpanElement>('#scoreBlue');
 const scoreOrangeEl = document.querySelector<HTMLSpanElement>('#scoreOrange');
 
@@ -58,9 +63,21 @@ function updateScore() {
     if (scoreOrangeEl) scoreOrangeEl.textContent = String(points.orange);
 }
 
-let flippedCards: HTMLButtonElement[] = [];
-let isLocked = false;
-let matchedPairs = 0;
+/* ---------- Anzeige: aktueller Spieler ---------- */
+const currentPlayerImg = document.querySelector<HTMLImageElement>('#currentPlayerImg');
+
+const playerImages: Record<string, string> = {
+    blue: '/public/assets/images/code-theme/game-screen/blue-player.png',
+    orange: '/public/assets/images/code-theme/game-screen/orange-player.png',
+};
+
+function updateCurrentPlayerDisplay() {
+    if (currentPlayerImg) {
+        currentPlayerImg.src = playerImages[currentPlayer];
+    }
+}
+
+updateCurrentPlayerDisplay();
 
 /* ---------- Spiellogik ---------- */
 function handleCardClick(card: HTMLButtonElement) {
@@ -92,6 +109,7 @@ function checkMatch() {
             second.classList.remove('is-flipped');
             flippedCards = [];
             currentPlayer = currentPlayer === 'blue' ? 'orange' : 'blue';
+            updateCurrentPlayerDisplay();
             isLocked = false;
         }, 1000);
     }
@@ -138,17 +156,18 @@ if (gameBoard) {
     });
 }
 
+/* ---------- Exit-Dialog ---------- */
 function openDialog() {
     const mydialog = document.getElementById('exitDialog') as HTMLDialogElement;
     mydialog?.showModal();
-
-    document.getElementById('cancelExitBtn')?.addEventListener('click', () => {
-    mydialog.close();
-});
 }
 
 const openBtn = document.getElementById('openBtn');
 openBtn?.addEventListener('click', openDialog);
+
+document.getElementById('cancelExitBtn')?.addEventListener('click', () => {
+    (document.getElementById('exitDialog') as HTMLDialogElement)?.close();
+});
 
 document.getElementById('confirmExitBtn')?.addEventListener('click', () => {
     window.location.href = './game-settings.html';
