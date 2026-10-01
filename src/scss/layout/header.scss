@@ -7,5 +7,62 @@
     height: 100px;
     max-width: 1200px;
     width: 100%;
+    margin-top: 10px;
     margin-bottom: 40px;
+    background-color: var(--header-bg);
+    border-radius: 8px;
+}
+
+.player-points {
+    background-color: var(--points-bg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-sizing: border-box;
+    padding: 12px;
+
+    &__box {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        > img {
+            height: 12px;
+        }
+
+        &--blue {
+            color: var(--blue-color);
+            margin: 0;
+        }
+
+        &--orange {
+            color: var(--orange-color);
+            margin: 0;
+        }
+    }
+}
+
+.player-turn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    > p {
+        color: var(--text-color);
+    }
+
+    > img {
+        height: 16px;
+    }
+}
+
+.exit-game-btn {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    > img {
+        height: 44px;
+    }
 }

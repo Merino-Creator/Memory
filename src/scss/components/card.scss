@@ -17,10 +17,10 @@
         position: absolute;
         inset: 0;
         backface-visibility: hidden;
-        background-image: url("/public/assets/images/code-theme/cards/code-card-bg.png");
+        background-image: var(--card-back-bg);
         background-size: cover;
         background-position: center;
-
+        border-radius: var(--da-card-border-radius);
 
         &--back {
             transform: rotateY(180deg);

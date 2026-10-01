@@ -1,5 +1,12 @@
-[data-theme="da-projects"] {
-    body {
-        background-color: #294F60;
-    }
+body[data-theme="da-projects"] {
+    --body-bg: white;
+    --header-bg: #F0F3F4;
+    --points-bg: white;
+    --blue-color: #2BB1FF;
+    --orange-color: #F58E39;
+    --text-color: #1E7594;
+    --card-back-bg: url("/public/assets/images/da-projects-theme/cards/da-card-bg.png");
+    --da-card-border-radius: 16px;
+
+    background-color: var(--body-bg);
 }
