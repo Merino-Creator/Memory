@@ -1,23 +1,28 @@
-body[data-theme="code-vibes"] {
-    &.draw-body {
-        justify-content: center;
-        font-family: "Red Rose";
+body.draw-screen[data-theme="code-vibes"] {
+    justify-content: center;
+}
+
+.draw-headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-family);
+
+    > h3 {
+        margin: 0;
+        font-size: 32px;
+        font-weight: 400;
+        color: white;
     }
 
-    .draw-headline {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        >h3 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        >h2 {
-            margin-top: 0;
-            font-size: 48px;
-            color: #4DD5BC;
-        }
+    > h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 100px;
+        color: var(--draw-color);
     }
+}
+
+.draw-img {
+    content: var(--draw-img);
 }

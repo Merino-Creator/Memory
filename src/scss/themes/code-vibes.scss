@@ -18,6 +18,12 @@ body[data-theme="code-vibes"] {
     --dialog-radius: 0;
     --dialog-cancel-img: url("/public/assets/images/code-theme/buttons/back-btn-it.png");
     --dialog-confirm-img: url("/public/assets/images/code-theme/buttons/exit-btn-dark.png");
+    --confetti-img: url("/public/assets/images/code-theme/winner-screen/confetti.png");
+    --back-btn-img: url("/public/assets/images/code-theme/buttons/back-to-start.png");
+    --win-bg: #303131;
+    --game-over-img: url("/public/assets/images/code-theme/game-over-screen/game-over.png");
+    --draw-img: url("/public/assets/images/code-theme/draw-screen/scale.png");
+    --draw-color: #4DD5BC;
 
     background-color: var(--body-bg);
 }

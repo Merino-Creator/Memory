@@ -1,14 +1,14 @@
-@use 'pages/start-screen.scss';
-@use 'pages/game-settings.scss';
-@use 'pages/win-screen.scss';
-@use 'pages/draw.scss';
-@use 'pages/game-over.scss';
 @use 'layout/header.scss';
 @use 'layout/grid.scss';
 @use 'layout/dialog.scss';
 @use 'themes/code-vibes.scss';
 @use 'themes/da-projects.scss';
 @use 'components/card.scss';
+@use 'pages/start-screen.scss';
+@use 'pages/game-settings.scss';
+@use 'pages/win-screen.scss';
+@use 'pages/draw.scss';
+@use 'pages/game-over.scss';
 
 body {
     margin: 0;

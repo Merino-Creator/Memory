@@ -18,6 +18,16 @@ body[data-theme="da-projects"] {
     --dialog-radius: 16px;
     --dialog-cancel-img: url("/public/assets/images/da-projects-theme/buttons/back-btn-da.png");
     --dialog-confirm-img: url("/public/assets/images/da-projects-theme/buttons/exit-game-btn-da.png");
+    --confetti-img: none;
+    --back-btn-img: url("/public/assets/images/da-projects-theme/buttons/home-btn.png");
+    --win-bg: #1E7594;
+    --game-over-img: url("/public/assets/images/da-projects-theme/game-over-screen/game-over.png");
+    --draw-img: url("/public/assets/images/da-projects-theme/draw-screen/scale.png");
+    --draw-color: #FD5B4F;
 
     background-color: var(--body-bg);
+    
+    .confetti-img {
+        display: none;
+    }
 }
