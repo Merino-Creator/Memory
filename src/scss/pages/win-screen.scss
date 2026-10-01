@@ -58,3 +58,11 @@ body[data-theme="code-vibes"][data-winner="orange"] {
 body[data-theme="da-projects"] {
     --winner-color: white;
 }
+
+@media (min-width: 1440px) {
+    .confetti-img {
+        content: var(--confetti-img-big);
+        max-width: unset;
+        object-fit: cover;
+    }
+}
