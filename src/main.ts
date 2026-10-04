@@ -58,5 +58,5 @@ startBtn?.addEventListener('click', () => {
     localStorage.setItem('theme', selections.theme);
     localStorage.setItem('player', selections.player);
     localStorage.setItem('board', selections.board);
-    window.location.href = './game.html';
+    window.location.href = './public/assets/pages/game.html';
 });

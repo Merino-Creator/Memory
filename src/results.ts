@@ -12,13 +12,13 @@ if (winner) {
 const backBtn = document.querySelector<HTMLButtonElement>('.back-btn');
 
 backBtn?.addEventListener('click', () => {
-    window.location.href = './game-settings.html';
+    window.location.href = './public/assets/pages/game-settings.html';
 });
 
 /* ---------- Automatische Weiterleitung auf dem Game-Over-Screen ---------- */
 if (window.location.pathname.includes('game-over')) {
     setTimeout(() => {
-        window.location.href = './game-settings.html';
+        window.location.href = './public/assets/pages/game-settings.html';
     }, 3000);
 }
 
