@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Merino-Creator/Memory#readme",
   "devDependencies": {
+    "@types/node": "^26.6.4",
     "sass": "^1.103.1",
     "typescript": "^7.0.2",
     "vite": "^8.2.2"

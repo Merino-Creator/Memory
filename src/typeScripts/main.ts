@@ -1,4 +1,4 @@
-import './scss/main.scss'
+import '../scss/main.scss'
 
 const themeRadios = document.querySelectorAll<HTMLInputElement>('input[name="theme"]');
 const themeImage = document.querySelector<HTMLImageElement>('.settings-box-right img');
@@ -58,5 +58,5 @@ startBtn?.addEventListener('click', () => {
     localStorage.setItem('theme', selections.theme);
     localStorage.setItem('player', selections.player);
     localStorage.setItem('board', selections.board);
-    window.location.href = '/src/game.html';
+    window.location.href = '/pages/game.html';
 });

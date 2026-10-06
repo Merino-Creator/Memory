@@ -1,5 +1,5 @@
-import './scss/main.scss';
-import cardsData from './data/cards.json';
+import '../scss/main.scss';
+import cardsData from '../data/cards.json';
 
 /* ---------- Theme ---------- */
 const themeLabel = localStorage.getItem('theme');
