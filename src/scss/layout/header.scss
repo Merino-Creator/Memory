@@ -29,7 +29,7 @@
         align-items: center;
         gap: 4px;
 
-        > p {
+        >p {
             margin: 0;
         }
 
@@ -69,12 +69,29 @@
     align-items: center;
     gap: 12px;
 
-    > p {
+    >p {
         color: var(--text-color);
     }
 
-    > img {
+    >img {
         height: 16px;
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &[data-player="blue"] .player-turn__icon {
+        background-image: var(--blue-player-img);
+    }
+
+    &[data-player="orange"] .player-turn__icon {
+        background-image: var(--orange-player-img);
     }
 }
 

@@ -77,11 +77,11 @@ const playerImagesByTheme: Record<string, Record<string, string>> = {
     },
 };
 
-const playerImages = playerImagesByTheme[currentTheme] ?? playerImagesByTheme['code-vibes'];
+const playerTurnEl = document.querySelector<HTMLDivElement>('.player-turn');
 
 function updateCurrentPlayerDisplay() {
-    if (currentPlayerImg) {
-        currentPlayerImg.src = playerImages[currentPlayer];
+    if (playerTurnEl) {
+        playerTurnEl.dataset.player = currentPlayer;
     }
 }
 
@@ -154,7 +154,7 @@ if (gameBoard) {
         card.innerHTML = `
             <div class="card__inner">
                 <div class="card__face"></div>
-                <div class="card__face card__face--back" style="background-image: url('${motif}')"></div>
+                <div class="card__face card__face--back" data-motif="${motif}"></div>
             </div>
         `;
 

@@ -1,3 +1,21 @@
+$it-motifs: angular, bootstrap, console, css, database, django, firebase, git, github,
+    html, js, node, python, react, sass, ts, vscode, vue;
+
+$da-motifs: chef, cuisine, currency, dabubble, delivery, eggs, elpollo, join, person,
+    pokedex, pokemon, ramen, ramen-two, sakura, smiley, tictac, v, wave;
+
+@each $name in $it-motifs {
+    body[data-theme="code-vibes"] .card__face--back[data-motif="#{$name}"] {
+        background-image: url("/assets/images/code-theme/cards/#{$name}-card.png");
+    }
+}
+
+@each $name in $da-motifs {
+    body[data-theme="da-projects"] .card__face--back[data-motif="#{$name}"] {
+        background-image: url("/assets/images/da-projects-theme/cards/#{$name}-card.png");
+    }
+}
+
 .card {
     height: 120px;
     aspect-ratio: 1 / 1;

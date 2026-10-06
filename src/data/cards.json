@@ -1,43 +1,13 @@
 {
     "it-motifs": [
-        "/assets/images/code-theme/cards/angular-card.png",
-        "/assets/images/code-theme/cards/bootstrap-card.png",
-        "/assets/images/code-theme/cards/console-card.png",
-        "/assets/images/code-theme/cards/css-card.png",
-        "/assets/images/code-theme/cards/database-card.png",
-        "/assets/images/code-theme/cards/django-card.png",
-        "/assets/images/code-theme/cards/firebase-card.png",
-        "/assets/images/code-theme/cards/git-card.png",
-        "/assets/images/code-theme/cards/github-card.png",
-        "/assets/images/code-theme/cards/html-card.png",
-        "/assets/images/code-theme/cards/js-card.png",
-        "/assets/images/code-theme/cards/node-card.png",
-        "/assets/images/code-theme/cards/python-card.png",
-        "/assets/images/code-theme/cards/react-card.png",
-        "/assets/images/code-theme/cards/sass-card.png",
-        "/assets/images/code-theme/cards/ts-card.png",
-        "/assets/images/code-theme/cards/vscode-card.png",
-        "/assets/images/code-theme/cards/vue-card.png"
+        "angular", "bootstrap", "console", "css", "database", "django",
+        "firebase", "git", "github", "html", "js", "node",
+        "python", "react", "sass", "ts", "vscode", "vue"
     ],
     
     "da-motifs": [
-        "/assets/images/da-projects-theme/cards/chef-card.png",
-        "/assets/images/da-projects-theme/cards/cuisine-card.png",
-        "/assets/images/da-projects-theme/cards/currency-card.png",
-        "/assets/images/da-projects-theme/cards/dabubble-card.png",
-        "/assets/images/da-projects-theme/cards/delivery-card.png",
-        "/assets/images/da-projects-theme/cards/eggs-card.png",
-        "/assets/images/da-projects-theme/cards/elpollo-card.png",
-        "/assets/images/da-projects-theme/cards/join-card.png",
-        "/assets/images/da-projects-theme/cards/person-card.png",
-        "/assets/images/da-projects-theme/cards/pokedex-card.png",
-        "/assets/images/da-projects-theme/cards/pokemon-card.png",
-        "/assets/images/da-projects-theme/cards/ramen-card.png",
-        "/assets/images/da-projects-theme/cards/ramen-two-card.png",
-        "/assets/images/da-projects-theme/cards/sakura-card.png",
-        "/assets/images/da-projects-theme/cards/smiley-card.png",
-        "/assets/images/da-projects-theme/cards/tictac-card.png",
-        "/assets/images/da-projects-theme/cards/v-card.png",
-        "/assets/images/da-projects-theme/cards/wave-card.png"
+        "chef", "cuisine", "currency", "dabubble", "delivery", "eggs",
+        "elpollo", "join", "person", "pokedex", "pokemon", "ramen",
+        "ramen-two", "sakura", "smiley", "tictac", "v", "wave"
     ]
 }
