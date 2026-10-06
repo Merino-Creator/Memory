@@ -154,6 +154,14 @@ input[type="radio"]:checked+.circle {
     flex-direction: column;
     align-items: flex-end;
     gap: 40px;
+
+    &[data-preview="code-vibes"] .preview-img {
+        content: url("/assets/images/settings-screen/it-theme-logo.png");
+    }
+
+    &[data-preview="da-projects"] .preview-img {
+        content: url("/assets/images/settings-screen/da-theme-logo.png");
+    }
 }
 
 .preview-img {
