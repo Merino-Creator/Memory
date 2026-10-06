@@ -30,7 +30,25 @@ body.result-screen[data-theme="da-projects"] {
 }
 
 .winner-pawn-img {
-    content: var(--winner-pawn-img);
+    width: 200px;
+    height: 250px;
+    border: none;
+}
+
+body[data-theme="code-vibes"][data-winner="blue"] .winner-pawn-img {
+    content: url("/assets/images/code-theme/winner-screen/blue-pawn.png");
+}
+
+body[data-theme="code-vibes"][data-winner="orange"] .winner-pawn-img {
+    content: url("/assets/images/code-theme/winner-screen/orange-pawn.png");
+}
+
+body[data-theme="da-projects"][data-winner="blue"] .winner-pawn-img {
+    content: url("/assets/images/da-projects-theme/winner-screen/blue-pawn-da.png");
+}
+
+body[data-theme="da-projects"][data-winner="orange"] .winner-pawn-img {
+    content: url("/assets/images/da-projects-theme/winner-screen/orange-pawn-da.png");
 }
 
 .back-btn {
