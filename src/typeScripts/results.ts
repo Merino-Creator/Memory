@@ -12,7 +12,7 @@ if (winner) {
 const backBtn = document.querySelector<HTMLButtonElement>('.back-btn');
 
 backBtn?.addEventListener('click', () => {
-    window.location.href = ':/pages/game-settings.html';
+    window.location.href = './pages/game-settings.html';
 });
 
 /* ---------- Automatische Weiterleitung auf dem Game-Over-Screen ---------- */
