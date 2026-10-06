@@ -4,8 +4,8 @@ const themeRadios = document.querySelectorAll<HTMLInputElement>('input[name="the
 const themeImage = document.querySelector<HTMLImageElement>('.settings-box-right img');
 
 const themeImages: Record<string, string> = {
-    'Code vibes theme': '/assets/images/settings-screen/it-theme-logo.png',
-    'DA Projects theme': '/assets/images/settings-screen/da-theme-logo.png'
+    'Code vibes theme': 'assets/images/settings-screen/it-theme-logo.png',
+    'DA Projects theme': 'assets/images/settings-screen/da-theme-logo.png'
 };
 
 themeRadios.forEach((radio) => {
@@ -58,5 +58,5 @@ startBtn?.addEventListener('click', () => {
     localStorage.setItem('theme', selections.theme);
     localStorage.setItem('player', selections.player);
     localStorage.setItem('board', selections.board);
-    window.location.href = '/pages/game.html';
+    window.location.href = 'game.html';
 });
