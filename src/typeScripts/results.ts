@@ -12,13 +12,13 @@ if (winner) {
 const backBtn = document.querySelector<HTMLButtonElement>('.back-btn');
 
 backBtn?.addEventListener('click', () => {
-    window.location.href = './pages/game-settings.html';
+    window.location.href = '/pages/game-settings.html';
 });
 
 /* ---------- Automatische Weiterleitung auf dem Game-Over-Screen ---------- */
 if (window.location.pathname.includes('game-over')) {
     setTimeout(() => {
-        window.location.href = './pages/game-settings.html';
+        window.location.href = '/pages/game-settings.html';
     }, 3000);
 }
 
@@ -35,12 +35,12 @@ const winnerPawnImg = document.querySelector<HTMLImageElement>('#winnerPawnImg')
 
 const pawnImagesByTheme: Record<string, Record<string, string>> = {
     'code-vibes': {
-        blue: '/public/assets/images/code-theme/winner-screen/blue-pawn.png',
-        orange: '/public/assets/images/code-theme/winner-screen/orange-pawn.png',
+        blue: '/assets/images/code-theme/winner-screen/blue-pawn.png',
+        orange: '/assets/images/code-theme/winner-screen/orange-pawn.png',
     },
     'da-projects': {
-        blue: '/public/assets/images/da-projects-theme/winner-screen/blue-pawn-da.png',
-        orange: '/public/assets/images/da-projects-theme/winner-screen/orange-pawn-da.png',
+        blue: '/assets/images/da-projects-theme/winner-screen/blue-pawn-da.png',
+        orange: '/assets/images/da-projects-theme/winner-screen/orange-pawn-da.png',
     },
 };
 
