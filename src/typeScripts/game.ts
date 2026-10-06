@@ -128,7 +128,7 @@ function endGame() {
     localStorage.setItem('scoreOrange', String(points.orange));
 
     if (points.blue === points.orange) {
-        window.location.href = '/pages/draw.html';
+        window.location.href = 'pages/draw.html';
         return;
     }
 
@@ -136,9 +136,9 @@ function endGame() {
 
     if (winner === playerChoice) {
         localStorage.setItem('winner', winner);
-        window.location.href = '/pages/win-screen.html';
+        window.location.href = 'pages/win-screen.html';
     } else {
-        window.location.href = '/pages/game-over.html';
+        window.location.href = 'pages/game-over.html';
     }
 }
 
@@ -178,5 +178,5 @@ document.getElementById('cancelExitBtn')?.addEventListener('click', () => {
 });
 
 document.getElementById('confirmExitBtn')?.addEventListener('click', () => {
-    window.location.href = '/pages/game-settings.html';
+    window.location.href = 'pages/game-settings.html';
 });
