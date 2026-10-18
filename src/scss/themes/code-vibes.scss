@@ -49,12 +49,19 @@ body[data-theme="code-vibes"] {
     --dialog-confirm-bg-hover: #dbfcf5;
     --dialog-confirm-color-hover: #4ED6BD;
 
+    --game-over-img: url("/assets/images/code-theme/game-over-screen/game-over.png");
+
     --confetti-img: url("/assets/images/code-theme/winner-screen/confetti.png");
     --confetti-img-big: url("/assets/images/code-theme/winner-screen/confetti-big.png");
-
-    --back-btn-img: url("/assets/images/code-theme/buttons/back-to-start.png");
     --win-bg: #303131;
-    --game-over-img: url("/assets/images/code-theme/game-over-screen/game-over.png");
+    --home-btn-bg: #415652;
+    --home-btn-color: white;
+    --home-btn-border: 2px solid #4ED6BD;
+    --home-btn-radius: 0;
+    --home-btn-bg-hover: #415652;
+    --home-btn-color-hover: white;
+    --home-btn-border-hover: 4px solid #4ED6BD;
+
     --draw-img: url("/assets/images/code-theme/draw-screen/scale.png");
     --draw-color: #4DD5BC;
 

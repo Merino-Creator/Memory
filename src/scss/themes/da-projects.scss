@@ -49,11 +49,17 @@ body[data-theme="da-projects"] {
     --dialog-confirm-bg-hover: #ED5B50;
     --dialog-confirm-color-hover: white;
 
-    --confetti-img: none;
-    --back-btn-img: url("/assets/images/da-projects-theme/buttons/home-btn.png");
-
-    --win-bg: #1E7594;
     --game-over-img: url("/assets/images/da-projects-theme/game-over-screen/game-over.png");
+
+    --confetti-img: none;
+    --win-bg: #1E7594;
+    --home-btn-bg: #BFE5F2;
+    --home-btn-color: #1E7594;
+    --home-btn-border: none;
+    --home-btn-radius: 12px;
+    --home-btn-bg-hover: #BFE5F2;
+    --home-btn-color-hover: #1E7594;
+
     --draw-img: url("/assets/images/da-projects-theme/draw-screen/scale.png");
     --draw-color: #FD5B4F;
 

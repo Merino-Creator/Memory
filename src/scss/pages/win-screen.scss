@@ -53,16 +53,24 @@ body[data-theme="da-projects"][data-winner="orange"] .winner-pawn-img {
 
 .back-btn {
     margin-top: 40px;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
     width: 200px;
     height: 60px;
-    background-image: var(--back-btn-img);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    padding: 0;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 700;
+    background-color: var(--home-btn-bg);
+    color: var(--home-btn-color);
+    border: var(--home-btn-border);
+    border-radius: var(--home-btn-radius);
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: var(--home-btn-bg-hover);
+        color: var(--home-btn-color-hover);
+        border: var(--home-btn-border-hover);
+    }
 }
 
 body[data-theme="code-vibes"][data-winner="blue"] {
