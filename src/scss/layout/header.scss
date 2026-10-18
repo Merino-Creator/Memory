@@ -4,10 +4,10 @@
     align-items: center;
     box-sizing: border-box;
     padding: 20px;
-    height: 80px;
+    height: 100px;
     max-width: 1200px;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 40px;
     background-color: var(--header-bg);
     border-radius: 8px;
@@ -23,6 +23,7 @@
     box-sizing: border-box;
     padding: 12px;
     border-radius: var(--points-box-radius);
+    height: 60px;
 
     &__box {
         display: flex;
@@ -31,6 +32,7 @@
 
         >p {
             margin: 0;
+            font-size: 20px;
         }
 
         &--blue {
@@ -52,8 +54,8 @@
 
     &__icon {
         display: inline-block;
-        width: 12px;
-        height: 12px;
+        width: 20px;
+        height: 20px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -68,42 +70,77 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    height: 60px;
 
     >p {
         color: var(--text-color);
-    }
-
-    >img {
-        height: 16px;
+        font-size: 22px;
     }
 
     &__icon {
         display: inline-block;
-        width: 16px;
-        height: 16px;
+        width: 24px;
+        height: 24px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
     }
 
     &[data-player="blue"] .player-turn__icon {
-        background-image: var(--blue-player-img);
+        background-image: var(--turn-blue-img);
+        background-color: var(--turn-blue-bg);
     }
 
     &[data-player="orange"] .player-turn__icon {
-        background-image: var(--orange-player-img);
+        background-image: var(--turn-orange-img);
+        background-color: var(--turn-orange-bg);
     }
 }
 
 .exit-game-btn {
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+    width: 180px;
     padding: 0;
-    background-color: transparent;
+    border: none;
     cursor: pointer;
-    height: 44px;
-    width: 140px;
-    background-image: var(--exit-btn-img);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: var(--exit-btn-bg);
+    border: var(--exit-btn-border);
+    border-color: var(--exit-btn-border-color);
+    border-radius: var(--exit-btn-radius);
+    font-family: var(--header-font);
+
+    >p {
+        margin: 0;
+        font-size: 20px;
+        font-weight: var(--header-font-weight);
+        color: var(--exit-btn-color);
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        background-image: var(--exit-btn-icon);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &:hover {
+        border: var(--exit-btn-border-hover);
+        border-color: var(--exit-btn-border-color);
+        box-shadow: var(--exit-btn-box-shadow);
+        background-color: var(--exit-btn-bg-hover);
+
+        >p {
+            color: var(--exit-btn-color-hover);
+        }
+
+        .exit-game-btn__icon {
+            background-image: var(--exit-btn-icon-hover);
+        }
+    }
 }

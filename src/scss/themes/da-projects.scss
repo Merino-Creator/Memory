@@ -5,28 +5,51 @@ body[data-theme="da-projects"] {
     --blue-color: #2BB1FF;
     --orange-color: #F58E39;
     --text-color: #1E7594;
+
     --card-back-bg: url("/assets/images/da-projects-theme/cards/da-card-bg.png");
     --card-border-radius: 16px;
+
     --points-box-radius: 12px;
     --header-font: "Figtree";
     --header-font-weight: 700;
     --exit-btn-img: url("/assets/images/da-projects-theme/buttons/exit-btn-da.png");
+
     --blue-player-img: url("/assets/images/da-projects-theme/game-screen/blue-player.png");
     --orange-player-img: url("/assets/images/da-projects-theme/game-screen/orange-player.png");
+
+    --turn-blue-img: url("/assets/images/da-projects-theme/game-screen/white-pawn.png");
+    --turn-orange-img: url("/assets/images/da-projects-theme/game-screen/white-pawn.png");
+    --turn-blue-bg: #097FC5;
+    --turn-orange-bg: #EE8630;
+
+    --exit-btn-color: #1E7594;
+    --exit-btn-color-hover: white;
+    --exit-btn-bg: #BFE5F2;
+    --exit-btn-bg-hover: #1E7594;
+    --exit-btn-border: none;
+    --exit-btn-border-color: transparent;
+    --exit-btn-border-hover: none;
+    --exit-btn-box-shadow: none;
+    --exit-btn-radius: 12px;
+    --exit-btn-icon: url("/assets/images/da-projects-theme/buttons/back-door-blue.png");
+    --exit-btn-icon-hover: url("/assets/images/code-theme/buttons/back-door-white.png");
+
     --label-display: none;
     --dialog-bg: #F0F6F9;
     --dialog-radius: 16px;
     --dialog-cancel-img: url("/assets/images/da-projects-theme/buttons/back-btn-da.png");
     --dialog-confirm-img: url("/assets/images/da-projects-theme/buttons/exit-game-btn-da.png");
+
     --confetti-img: none;
     --back-btn-img: url("/assets/images/da-projects-theme/buttons/home-btn.png");
+
     --win-bg: #1E7594;
     --game-over-img: url("/assets/images/da-projects-theme/game-over-screen/game-over.png");
     --draw-img: url("/assets/images/da-projects-theme/draw-screen/scale.png");
     --draw-color: #FD5B4F;
 
     background-color: var(--body-bg);
-    
+
     .confetti-img {
         display: none;
     }
