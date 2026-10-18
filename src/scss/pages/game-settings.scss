@@ -110,12 +110,21 @@
         display: none;
     }
 
-    input[type="radio"]:checked~.selected-arrow-img {
-        display: inline-block;
-    }
-
+    &:hover,
     &:has(input:checked) {
         font-weight: bold;
+
+        .selected-arrow-img {
+            display: inline-block;
+        }
+
+        .circle {
+            border-width: 1px;
+
+            &::after {
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -162,6 +171,14 @@ input[type="radio"]:checked+.circle {
     &[data-preview="da-projects"] .preview-img {
         content: url("/assets/images/settings-screen/da-theme-logo.png");
     }
+}
+
+.settings-content:has(.custom-checkbox[data-preview-key="code-vibes"]:hover) .preview-img {
+    content: url("/assets/images/settings-screen/it-theme-logo.png");
+}
+
+.settings-content:has(.custom-checkbox[data-preview-key="da-projects"]:hover) .preview-img {
+    content: url("/assets/images/settings-screen/da-theme-logo.png");
 }
 
 .preview-img {
