@@ -34,15 +34,40 @@
         }
     }
 
-    &-btn{
-        content: url('/assets/images/buttons/play-btn.png');
-        height: 100px;
+    > .play-btn {
         width: 250px;
-    }
+        height: 100px;
+        background-color: #f0ea6e;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-family: "Red Rose";
+        cursor: pointer;
+        transition: transform 0.2s ease;
 
-    &-btn:hover {
-        content: url('/assets/images/buttons/play-btn-hover.png');
-        height: 100px;
-        width: 250px;
+        > .controller-img {
+            height: 30px;
+            width: 40px;
+            transition: transform 0.2s ease;
+        }
+
+        > p {
+            color: #2f3131;
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        > .arrow-right-img {
+            width: 36px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+
+            > .controller-img {
+                transform: rotate(-25deg);
+            }
+        }
     }
 }
