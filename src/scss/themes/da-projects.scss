@@ -34,11 +34,20 @@ body[data-theme="da-projects"] {
     --exit-btn-icon: url("/assets/images/da-projects-theme/buttons/back-door-blue.png");
     --exit-btn-icon-hover: url("/assets/images/code-theme/buttons/back-door-white.png");
 
-    --label-display: none;
     --dialog-bg: #F0F6F9;
-    --dialog-radius: 16px;
-    --dialog-cancel-img: url("/assets/images/da-projects-theme/buttons/back-btn-da.png");
-    --dialog-confirm-img: url("/assets/images/da-projects-theme/buttons/exit-game-btn-da.png");
+    --dialog-radius: 12px;
+    --dialog-btn-radius: 12px;
+    --dialog-cancel-bg: #BFE5F2;
+    --dialog-cancel-color: #1E7594;
+    --dialog-cancel-border: 2px solid none;
+    --dialog-cancel-bg-hover: #1E7594;
+    --dialog-cancel-color-hover: white;
+    --dialog-confirm-bg: #FD8A81;
+    --dialog-confirm-color: white;
+    --dialog-confirm-border: none;
+    --dialog-confirm-border-hover: none;
+    --dialog-confirm-bg-hover: #ED5B50;
+    --dialog-confirm-color-hover: white;
 
     --confetti-img: none;
     --back-btn-img: url("/assets/images/da-projects-theme/buttons/home-btn.png");

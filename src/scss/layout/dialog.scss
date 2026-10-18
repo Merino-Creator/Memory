@@ -20,22 +20,37 @@
     }
 
     &__btn {
-        border: none;
-        padding: 0;
-        background-color: transparent;
-        cursor: pointer;
         width: 120px;
         height: 44px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
+        padding: 0;
+        cursor: pointer;
+        font-family: var(--header-font);
+        font-size: 16px;
+        font-weight: var(--header-font-weight);
+        border-radius: var(--dialog-btn-radius);
+        transition: background-color 0.2s ease, color 0.2s ease;
 
         &--cancel {
-            background-image: var(--dialog-cancel-img);
+            background-color: var(--dialog-cancel-bg);
+            color: var(--dialog-cancel-color);
+            border: var(--dialog-cancel-border);
+
+            &:hover {
+                background-color: var(--dialog-cancel-bg-hover);
+                color: var(--dialog-cancel-color-hover);
+            }
         }
 
         &--confirm {
-            background-image: var(--dialog-confirm-img);
+            background-color: var(--dialog-confirm-bg);
+            color: var(--dialog-confirm-color);
+            border: var(--dialog-confirm-border);
+
+            &:hover {
+                background-color: var(--dialog-confirm-bg-hover);
+                color: var(--dialog-confirm-color-hover);
+                border: var(--dialog-confirm-border-hover);
+            }
         }
     }
 }

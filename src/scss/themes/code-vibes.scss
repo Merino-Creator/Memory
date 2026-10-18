@@ -34,11 +34,20 @@ body[data-theme="code-vibes"] {
     --exit-btn-icon: url("/assets/images/code-theme/buttons/back-door-white.png");
     --exit-btn-icon-hover: url("/assets/images/code-theme/buttons/back-door-white.png");
 
-    --label-display: inline;
-    --dialog-bg: white;
+    --dialog-bg: #F0F6F9;
     --dialog-radius: 0;
-    --dialog-cancel-img: url("/assets/images/code-theme/buttons/back-btn-it.png");
-    --dialog-confirm-img: url("/assets/images/code-theme/buttons/exit-btn-dark.png");
+    --dialog-btn-radius: 0;
+    --dialog-cancel-bg: #4ED6BD;
+    --dialog-cancel-color: white;
+    --dialog-cancel-border: 2px solid #4ED6BD;
+    --dialog-cancel-bg-hover: #94DED0;
+    --dialog-cancel-color-hover: white;
+    --dialog-confirm-bg: #EEFCF9;
+    --dialog-confirm-color: #4ED6BD;
+    --dialog-confirm-border: 2px solid #4ED6BD;
+    --dialog-confirm-border-hover: 4px solid #4ED6BD;
+    --dialog-confirm-bg-hover: #dbfcf5;
+    --dialog-confirm-color-hover: #4ED6BD;
 
     --confetti-img: url("/assets/images/code-theme/winner-screen/confetti.png");
     --confetti-img-big: url("/assets/images/code-theme/winner-screen/confetti-big.png");
