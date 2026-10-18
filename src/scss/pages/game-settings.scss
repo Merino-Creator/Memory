@@ -182,24 +182,47 @@ input[type="radio"]:checked+.circle {
 }
 
 .start-btn {
-    padding: 0;
+    height: 50px;
+    width: 120px;
+    background-color: #f0ea6e;
     border: none;
-    height: 53px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: "Red Rose";
+    transition: transform 0.2s ease, background-color 0.2s ease;
 
-    img {
-        content: url('/assets/images/settings-screen/start-button.png');
-        transition: scale 0.2s ease;
+    >.start-btn-img {
+        height: 24px;
+        width: 24px;
+        transition: filter 0.2s ease;
     }
 
-    &:hover img {
-        content: url('/assets/images/settings-screen/start-button-hover.png');
-        height: 53px;
-        width: 126px;
-        scale: 1.1;
+    >p {
+        font-size: 20px;
+        font-weight: 700;
+        color: #2f3131;
+        margin: 0;
+        transition: filter 0.2s ease;
     }
 
-    &:disabled img {
-        content: url('/assets/images/settings-screen/start-button-disabled.png');
+    &:hover:not(:disabled) {
+        transform: scale(1.05);
+    }
+
+    &:disabled {
+        background-color: #d9d9d9;
+        cursor: not-allowed;
+
+        >.start-btn-img {
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+
+        >p {
+            color: #8a8a8a;
+        }
     }
 }
