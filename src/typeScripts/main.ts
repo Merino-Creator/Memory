@@ -1,13 +1,11 @@
 import '../scss/main.scss'
 
-/* ---------- Startseite: Play-Button ---------- */
 const playBtn = document.querySelector<HTMLButtonElement>('.play-btn');
 
 playBtn?.addEventListener('click', () => {
     window.location.href = `${import.meta.env.BASE_URL}/pages/game-settings.html`;
 });
 
-/* ---------- Settings: Theme-Vorschau ---------- */
 const themeRadios = document.querySelectorAll<HTMLInputElement>('input[name="theme"]');
 const previewBox = document.querySelector<HTMLDivElement>('.settings-box-right');
 
@@ -25,7 +23,6 @@ themeRadios.forEach((radio) => {
     });
 });
 
-/* ---------- Settings: Auswahl und Election-Line ---------- */
 const themeValueEl = document.querySelector<HTMLParagraphElement>('.theme-value');
 const playerValueEl = document.querySelector<HTMLParagraphElement>('.player-value');
 const boardValueEl = document.querySelector<HTMLParagraphElement>('.board-value');
@@ -52,7 +49,7 @@ function bindRadioGroup(name: string, targetEl: HTMLParagraphElement | null, key
             if (labelText && targetEl) {
                 targetEl.textContent = labelText;
                 selections[key] = labelText;
-                localStorage.setItem(key, labelText); // ← neu
+                localStorage.setItem(key, labelText);
                 checkAllSelected();
             }
         });
@@ -82,7 +79,6 @@ restoreSelection('theme', 'theme');
 restoreSelection('player', 'player');
 restoreSelection('board', 'board');
 
-/* ---------- Settings: Spiel starten ---------- */
 startBtn?.addEventListener('click', () => {
     localStorage.setItem('theme', selections.theme);
     localStorage.setItem('player', selections.player);
