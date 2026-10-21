@@ -1,0 +1,20 @@
+.back-btn {
+    margin-top: 40px;
+    width: 200px;
+    height: 60px;
+    padding: 0;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--home-btn-bg);
+    color: var(--home-btn-color);
+    border: var(--home-btn-border);
+    border-radius: var(--home-btn-radius);
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: var(--home-btn-bg-hover);
+        color: var(--home-btn-color-hover);
+    }
+}
