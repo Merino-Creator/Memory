@@ -52,6 +52,7 @@ function bindRadioGroup(name: string, targetEl: HTMLParagraphElement | null, key
             if (labelText && targetEl) {
                 targetEl.textContent = labelText;
                 selections[key] = labelText;
+                localStorage.setItem(key, labelText); // ← neu
                 checkAllSelected();
             }
         });
@@ -61,6 +62,25 @@ function bindRadioGroup(name: string, targetEl: HTMLParagraphElement | null, key
 bindRadioGroup('theme', themeValueEl, 'theme');
 bindRadioGroup('player', playerValueEl, 'player');
 bindRadioGroup('board', boardValueEl, 'board');
+
+function restoreSelection(name: string, key: keyof typeof selections) {
+    const saved = localStorage.getItem(key);
+    if (!saved) return;
+
+    const radios = document.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`);
+
+    radios.forEach((radio) => {
+        const text = radio.parentElement?.querySelector('.label-text')?.getAttribute('data-text');
+        if (text === saved) {
+            radio.checked = true;
+            radio.dispatchEvent(new Event('change'));
+        }
+    });
+}
+
+restoreSelection('theme', 'theme');
+restoreSelection('player', 'player');
+restoreSelection('board', 'board');
 
 /* ---------- Settings: Spiel starten ---------- */
 startBtn?.addEventListener('click', () => {
