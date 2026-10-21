@@ -1,8 +1,10 @@
 import '../scss/main.scss'
+import { resetGameData } from './theme';
 
 const playBtn = document.querySelector<HTMLButtonElement>('.play-btn');
 
 playBtn?.addEventListener('click', () => {
+    resetGameData();
     window.location.href = `${import.meta.env.BASE_URL}/pages/game-settings.html`;
 });
 

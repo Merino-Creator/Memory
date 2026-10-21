@@ -9,3 +9,9 @@ export function applyTheme(): string {
     document.body.dataset.theme = theme;
     return theme;
 }
+
+export function resetGameData() {
+    ['theme', 'player', 'board', 'winner', 'scoreBlue', 'scoreOrange'].forEach((key) => {
+        localStorage.removeItem(key);
+    });
+}

@@ -1,7 +1,7 @@
 import '../scss/main.scss';
-import { applyTheme } from './theme';
+import { applyTheme, resetGameData } from './theme';
 
-const currentTheme = applyTheme();
+applyTheme();
 
 const winner = localStorage.getItem('winner');
 if (winner) {
@@ -35,10 +35,4 @@ if (winner === 'blue' || winner === 'orange') {
     if (winnerNameEl) {
         winnerNameEl.textContent = winner === 'blue' ? 'BLUE PLAYER' : 'ORANGE PLAYER';
     }
-}
-
-function resetGameData() {
-    ['theme', 'player', 'board', 'winner', 'scoreBlue', 'scoreOrange'].forEach((key) => {
-        localStorage.removeItem(key);
-    });
 }
