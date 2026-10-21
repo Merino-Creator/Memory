@@ -1,7 +1,6 @@
 import '../scss/main.scss';
 import cardsData from '../data/cards.json';
 
-/* ---------- Theme ---------- */
 const themeLabel = localStorage.getItem('theme');
 
 const themeKeys: Record<string, string> = {
@@ -12,7 +11,6 @@ const themeKeys: Record<string, string> = {
 const currentTheme = (themeLabel && themeKeys[themeLabel]) || 'code-vibes';
 document.body.dataset.theme = currentTheme;
 
-/* ---------- Board-Einstellungen ---------- */
 const boardSizeLabel = localStorage.getItem('board');
 const gameBoard = document.querySelector<HTMLDivElement>('#gameBoard');
 
@@ -25,7 +23,6 @@ const columnsByBoard: Record<string, number> = {
 const cardCount = Number(boardSizeLabel?.split(' ')[0]) || 16;
 const columns = columnsByBoard[boardSizeLabel ?? ''] ?? 4;
 
-/* ---------- Motive auswählen und mischen ---------- */
 const motifKeysByTheme: Record<string, keyof typeof cardsData> = {
     'code-vibes': 'it-motifs',
     'da-projects': 'da-motifs',
@@ -45,7 +42,6 @@ const pairsNeeded = cardCount / 2;
 const selectedMotifs = cardsData[motifKey].slice(0, pairsNeeded);
 const cardMotifs = shuffle([...selectedMotifs, ...selectedMotifs]);
 
-/* ---------- Spielzustand ---------- */
 const playerChoice = (localStorage.getItem('player') ?? 'Blue').toLowerCase();
 let currentPlayer = playerChoice;
 const points: Record<string, number> = { blue: 0, orange: 0 };
@@ -54,7 +50,6 @@ let flippedCards: HTMLButtonElement[] = [];
 let isLocked = false;
 let matchedPairs = 0;
 
-/* ---------- Anzeige: Punktestand ---------- */
 const scoreBlueEl = document.querySelector<HTMLSpanElement>('#scoreBlue');
 const scoreOrangeEl = document.querySelector<HTMLSpanElement>('#scoreOrange');
 
@@ -63,7 +58,6 @@ function updateScore() {
     if (scoreOrangeEl) scoreOrangeEl.textContent = String(points.orange);
 }
 
-/* ---------- Anzeige: aktueller Spieler ---------- */
 const currentPlayerImg = document.querySelector<HTMLImageElement>('#currentPlayerImg');
 
 const playerImagesByTheme: Record<string, Record<string, string>> = {
@@ -87,7 +81,6 @@ function updateCurrentPlayerDisplay() {
 
 updateCurrentPlayerDisplay();
 
-/* ---------- Spiellogik ---------- */
 function handleCardClick(card: HTMLButtonElement) {
     if (isLocked || card.classList.contains('is-flipped')) return;
 
@@ -127,22 +120,14 @@ function endGame() {
     localStorage.setItem('scoreBlue', String(points.blue));
     localStorage.setItem('scoreOrange', String(points.orange));
 
-    if (points.blue === points.orange) {
-        window.location.href = 'draw.html';
-        return;
-    }
+    const winner =
+        points.blue === points.orange ? 'draw' : points.blue > points.orange ? 'blue' : 'orange';
+    localStorage.setItem('winner', winner);
 
-    const winner = points.blue > points.orange ? 'blue' : 'orange';
-
-    if (winner === playerChoice) {
-        localStorage.setItem('winner', winner);
-        window.location.href = 'win-screen.html';
-    } else {
-        window.location.href = 'game-over.html';
-    }
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    window.location.href = `${base}/pages/game-over.html`;
 }
 
-/* ---------- Karten erzeugen ---------- */
 if (gameBoard) {
     gameBoard.style.setProperty('--columns', String(columns));
 
@@ -164,7 +149,6 @@ if (gameBoard) {
     });
 }
 
-/* ---------- Exit-Dialog ---------- */
 function openDialog() {
     const mydialog = document.getElementById('exitDialog') as HTMLDialogElement;
     mydialog?.showModal();

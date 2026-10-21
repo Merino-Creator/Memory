@@ -8,32 +8,37 @@ if (winner) {
     document.body.dataset.winner = winner;
 }
 
-/* ---------- Zurück-Button ---------- */
 const backBtn = document.querySelector<HTMLButtonElement>('.back-btn');
 
 backBtn?.addEventListener('click', () => {
+    resetGameData();
     window.location.href = 'game-settings.html';
 });
 
-/* ---------- Automatische Weiterleitung auf dem Game-Over-Screen ---------- */
 if (window.location.pathname.includes('game-over')) {
     setTimeout(() => {
-        window.location.href = 'game-settings.html';
-    }, 3000);
+        const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+        const target = localStorage.getItem('winner') === 'draw' ? 'draw.html' : 'win-screen.html';
+        window.location.href = `${base}/pages/${target}`;
+    }, 2000);
 }
 
-/* ---------- Endstand anzeigen ---------- */
 const finalBlue = document.querySelector<HTMLSpanElement>('#finalScoreBlue');
 const finalOrange = document.querySelector<HTMLSpanElement>('#finalScoreOrange');
 
 if (finalBlue) finalBlue.textContent = localStorage.getItem('scoreBlue') ?? '0';
 if (finalOrange) finalOrange.textContent = localStorage.getItem('scoreOrange') ?? '0';
 
-/* ---------- Gewinner-Anzeige (Name + Spielfigur) ---------- */
 const winnerNameEl = document.querySelector<HTMLHeadingElement>('#winnerName');
 
 if (winner === 'blue' || winner === 'orange') {
     if (winnerNameEl) {
         winnerNameEl.textContent = winner === 'blue' ? 'BLUE PLAYER' : 'ORANGE PLAYER';
     }
+}
+
+function resetGameData() {
+    ['theme', 'player', 'board', 'winner', 'scoreBlue', 'scoreOrange'].forEach((key) => {
+        localStorage.removeItem(key);
+    });
 }
