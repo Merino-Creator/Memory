@@ -18,3 +18,10 @@
         color: var(--home-btn-color-hover);
     }
 }
+
+.home-btn:hover {
+    border: var(--exit-btn-border-hover);
+    border-color: var(--exit-btn-border-color);
+    box-shadow: var(--exit-btn-box-shadow);
+    background-color: var(--exit-btn-bg-hover);
+}

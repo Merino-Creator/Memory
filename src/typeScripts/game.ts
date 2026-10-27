@@ -112,7 +112,7 @@ function checkMatch() {
             currentPlayer = currentPlayer === 'blue' ? 'orange' : 'blue';
             updateCurrentPlayerDisplay();
             isLocked = false;
-        }, 1000);
+        }, 600);
     }
 }
 
