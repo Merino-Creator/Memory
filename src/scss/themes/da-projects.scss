@@ -12,7 +12,6 @@ body[data-theme="da-projects"] {
     --points-box-radius: 12px;
     --header-font: "Figtree";
     --header-font-weight: 700;
-    --exit-btn-img: url("/assets/images/da-projects-theme/buttons/exit-btn-da.png");
 
     --blue-player-img: url("/assets/images/da-projects-theme/game-screen/blue-player.png");
     --orange-player-img: url("/assets/images/da-projects-theme/game-screen/orange-player.png");
@@ -39,7 +38,7 @@ body[data-theme="da-projects"] {
     --dialog-btn-radius: 12px;
     --dialog-cancel-bg: #BFE5F2;
     --dialog-cancel-color: #1E7594;
-    --dialog-cancel-border: 2px solid none;
+    --dialog-cancel-border: none;
     --dialog-cancel-bg-hover: #1E7594;
     --dialog-cancel-color-hover: white;
     --dialog-confirm-bg: #FD8A81;

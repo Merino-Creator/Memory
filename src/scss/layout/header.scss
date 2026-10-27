@@ -105,7 +105,6 @@
     height: 60px;
     width: 180px;
     padding: 0;
-    border: none;
     cursor: pointer;
     background-color: var(--exit-btn-bg);
     border: var(--exit-btn-border);
@@ -113,8 +112,7 @@
     border-radius: var(--exit-btn-radius);
     font-family: var(--header-font);
 
-    >p {
-        margin: 0;
+    &__text {
         font-size: 20px;
         font-weight: var(--header-font-weight);
         color: var(--exit-btn-color);
@@ -135,7 +133,7 @@
         box-shadow: var(--exit-btn-box-shadow);
         background-color: var(--exit-btn-bg-hover);
 
-        >p {
+        .exit-game-btn__text {
             color: var(--exit-btn-color-hover);
         }
 
