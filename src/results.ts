@@ -1,5 +1,5 @@
 import '../scss/main.scss';
-import { applyTheme, resetGameData } from './theme';
+import { applyTheme, resetGameData } from '../theme';
 
 applyTheme();
 
