@@ -15,6 +15,12 @@ body.result-screen {
         margin-top: 60px;
         color: var(--text-color);
 
+        &__title {
+            margin: 1em 0;
+            font-size: 1em;
+            font-weight: 400;
+        }
+
         &__box {
             display: flex;
             align-items: center;
@@ -30,7 +36,13 @@ body.result-screen {
                 align-items: center;
                 gap: 8px;
 
-                > p { margin: 0; }
+                >p {
+                    margin: 0;
+                }
+
+                .score__icon {
+                    background-image: var(--blue-player-img);
+                }
             }
 
             &__orange {
@@ -39,25 +51,23 @@ body.result-screen {
                 align-items: center;
                 gap: 8px;
 
-                > p { margin: 0; }
+                >p {
+                    margin: 0;
+                }
+
+                .score__icon {
+                    background-image: var(--orange-player-img);
+                }
             }
         }
+
+        &__icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     }
-
-    &__icon {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-}
-
-.score__box__blue .score__icon {
-    background-image: var(--blue-player-img);
-}
-
-.score__box__orange .score__icon {
-    background-image: var(--orange-player-img);
 }

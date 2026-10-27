@@ -6,30 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Over</title>
 
-    <link rel="icon" type="image/x-icon" href="/assets/images/da-projects-theme/game-screen/player-status.png">
-    
+    <link rel="icon" type="image/png" href="/assets/images/da-projects-theme/game-screen/player-status.png">
 </head>
 
 <body class="result-screen game-over-screen">
 
-    <img class="game-over-img" alt="">
+    <main class="result-content">
+        <h1 class="visually-hidden">Game over</h1>
+        <img class="game-over-img" alt="">
 
-    <div class="score">
-        <p>Final score</p>
-        <div class="score__box">
-            <div class="score__box__blue">
-                <span class="score__icon"></span>
-                <p>Blue: <span id="finalScoreBlue">0</span></p>
-            </div>
-            <div class="score__box__orange">
-                <span class="score__icon"></span>
-                <p>Orange: <span id="finalScoreOrange">0</span></p>
-            </div>
-        </div>
-    </div>
+        <section class="score">
+            <h2 class="score__title">Final score</h2>
 
+            <div class="score__box">
+                <div class="score__box__blue">
+                    <span class="score__icon"></span>
+                    <p>Blue: <span id="finalScoreBlue">0</span></p>
+                </div>
+                <div class="score__box__orange">
+                    <span class="score__icon"></span>
+                    <p>Orange: <span id="finalScoreOrange">0</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/results.ts"></script>
 </body>
-
-<script type="module" src="/typeScripts/results.ts"></script>
 
 </html>

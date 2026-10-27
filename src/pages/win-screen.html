@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winner</title>
 
-    <link rel="icon" type="image/x-icon" href="/assets/images/da-projects-theme/game-screen/player-status.png">
-    
+    <link rel="icon" type="image/png" href="/assets/images/da-projects-theme/game-screen/player-status.png">
 </head>
 
 <body class="result-screen slide-in">
 
-    <img class="confetti-img" alt="">
+    <main class="result-content">
+        <img class="confetti-img" alt="">
 
-    <div class="winner-headline">
-        <h3>The winner is</h3>
-        <h2 id="winnerName"></h2>
-    </div>
+        <header class="winner-headline">
+            <p>The winner is</p>
+            <h1 id="winnerName"></h1>
+        </header>
 
-    <img class="winner-pawn-img" alt="">
+        <img class="winner-pawn-img" alt="">
 
-    <button class="back-btn home-btn">Home</button>
+        <button class="back-btn" type="button">Home</button>
+    </main>
 
+    <script type="module" src="/results.ts"></script>
 </body>
-
-<script type="module" src="/typeScripts/results.ts"></script>
 
 </html>

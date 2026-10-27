@@ -4,7 +4,7 @@
     height: 60px;
     padding: 0;
     cursor: pointer;
-    font-family: var(--font-family);
+    font-family: var(--header-font);
     font-size: 20px;
     font-weight: 700;
     background-color: var(--home-btn-bg);
@@ -16,12 +16,7 @@
     &:hover {
         background-color: var(--home-btn-bg-hover);
         color: var(--home-btn-color-hover);
+        border: var(--home-btn-border-hover, var(--home-btn-border));
+        box-shadow: var(--home-btn-box-shadow, none);
     }
-}
-
-.home-btn:hover {
-    border: var(--exit-btn-border-hover);
-    border-color: var(--exit-btn-border-color);
-    box-shadow: var(--exit-btn-box-shadow);
-    background-color: var(--exit-btn-bg-hover);
 }
