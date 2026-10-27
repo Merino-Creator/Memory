@@ -60,6 +60,11 @@
         background-repeat: no-repeat;
         background-position: center;
     }
+
+    &__score {
+        display: inline-block;
+        min-width: 15px;
+    }
 }
 
 .player-points__label {
