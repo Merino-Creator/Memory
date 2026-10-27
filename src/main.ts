@@ -1,6 +1,6 @@
 import './scss/main.scss';
 
-import { resetGameData } from './theme';
+import { THEME_KEYS, resetGameData } from './theme';
 
 type SelectionKey = 'theme' | 'player' | 'board';
 
@@ -19,11 +19,6 @@ const VALUE_ELEMENTS: Record<SelectionKey, HTMLParagraphElement | null> = {
     theme: document.querySelector<HTMLParagraphElement>('.theme-value'),
     player: document.querySelector<HTMLParagraphElement>('.player-value'),
     board: document.querySelector<HTMLParagraphElement>('.board-value'),
-};
-
-const PREVIEW_KEYS: Record<string, string> = {
-    'Code vibes theme': 'code-vibes',
-    'DA Projects theme': 'da-projects',
 };
 
 const SELECTION_KEYS: SelectionKey[] = ['theme', 'player', 'board'];
@@ -63,7 +58,7 @@ function startGame(): void {
  * @param themeLabel - Anzeigetext des Themes
  */
 function updatePreview(themeLabel: string): void {
-    const previewKey: string | undefined = PREVIEW_KEYS[themeLabel];
+    const previewKey: string | undefined = THEME_KEYS[themeLabel];
 
     if (previewKey && PREVIEW_BOX) {
         PREVIEW_BOX.dataset.preview = previewKey;

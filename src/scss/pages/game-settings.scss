@@ -15,8 +15,9 @@
     margin-bottom: 40px;
     font-family: "Red Rose";
 
-    >h2 {
+    >h1 {
         margin: 0;
+        font-size: 1.5em;
     }
 
     >img {
@@ -50,7 +51,7 @@
     align-items: center;
     gap: 8px;
 
-    >h3 {
+    >h2 {
         margin: 0;
         font-size: 24px;
         font-weight: 600;
@@ -68,7 +69,7 @@
     align-items: center;
     gap: 8px;
 
-    >h3 {
+    >h2 {
         margin: 0;
         font-size: 24px;
         font-weight: 600;
@@ -86,7 +87,7 @@
     align-items: center;
     gap: 8px;
 
-    >h3 {
+    >h2 {
         margin: 0;
         font-size: 24px;
         font-weight: 600;
@@ -147,14 +148,6 @@
         background-color: black;
         transform: translate(-50%, -50%);
         opacity: 0;
-    }
-}
-
-input[type="radio"]:checked+.circle {
-    border: 1px solid black;
-
-    &::after {
-        opacity: 1;
     }
 }
 
@@ -231,11 +224,10 @@ input[type="radio"]:checked+.circle {
         transition: filter 0.2s ease;
     }
 
-    >p {
+    >span {
         font-size: 20px;
         font-weight: 700;
         color: #2f3131;
-        margin: 0;
         transition: filter 0.2s ease;
     }
 
@@ -252,7 +244,7 @@ input[type="radio"]:checked+.circle {
             opacity: 0.5;
         }
 
-        >p {
+        >span {
             color: #8a8a8a;
         }
     }
