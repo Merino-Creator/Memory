@@ -196,6 +196,19 @@ input[type="radio"]:checked+.circle {
     box-sizing: border-box;
     padding: 0 12px 0 12px;
     gap: 12px;
+
+    >.theme-value {
+        min-width: 162px;
+    }
+
+    >.player-value {
+        min-width: 66px;
+        text-align: center;
+    }
+
+    >.board-value {
+        min-width: 72px;
+    }
 }
 
 .start-btn {
