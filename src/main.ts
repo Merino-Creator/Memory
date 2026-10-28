@@ -12,13 +12,13 @@ interface Selections {
 
 const PLAY_BTN: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>('.play-btn');
 const START_BTN: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>('.start-btn');
-const PREVIEW_BOX: HTMLDivElement | null = document.querySelector<HTMLDivElement>('.settings-box-right');
+const PREVIEW_BOX: HTMLElement | null = document.querySelector<HTMLElement>('.settings-box-right');
 const THEME_RADIOS: NodeListOf<HTMLInputElement> = document.querySelectorAll<HTMLInputElement>('input[name="theme"]');
 
-const VALUE_ELEMENTS: Record<SelectionKey, HTMLParagraphElement | null> = {
-    theme: document.querySelector<HTMLParagraphElement>('.theme-value'),
-    player: document.querySelector<HTMLParagraphElement>('.player-value'),
-    board: document.querySelector<HTMLParagraphElement>('.board-value'),
+const VALUE_ELEMENTS: Record<SelectionKey, HTMLSpanElement | null> = {
+    theme: document.querySelector<HTMLSpanElement>('.theme-value'),
+    player: document.querySelector<HTMLSpanElement>('.player-value'),
+    board: document.querySelector<HTMLSpanElement>('.board-value'),
 };
 
 const SELECTION_KEYS: SelectionKey[] = ['theme', 'player', 'board'];
@@ -83,7 +83,7 @@ function updateStartButton(): void {
  * @param label - gewählter Text
  */
 function applySelection(key: SelectionKey, label: string): void {
-    const targetEl: HTMLParagraphElement | null = VALUE_ELEMENTS[key];
+    const targetEl: HTMLSpanElement | null = VALUE_ELEMENTS[key];
 
     if (targetEl) {
         targetEl.textContent = label;

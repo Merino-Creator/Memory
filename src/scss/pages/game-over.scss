@@ -4,7 +4,7 @@ body.game-over-screen[data-theme="code-vibes"] {
 
 body.result-screen {
     .game-over-img {
-        height: 120px;
+        height: 125px;
         content: var(--game-over-img);
     }
 
@@ -14,10 +14,11 @@ body.result-screen {
         align-items: center;
         margin-top: 60px;
         color: var(--text-color);
+        font-family: (--header-font);
 
         &__title {
             margin: 1em 0;
-            font-size: 1em;
+            font-size: 26px;
             font-weight: 400;
         }
 
@@ -29,6 +30,8 @@ body.result-screen {
             box-sizing: border-box;
             padding: 12px;
             border-radius: var(--points-box-radius);
+            font-family: (--header-font);
+            font-size: 20px;
 
             &__blue {
                 color: var(--blue-color);

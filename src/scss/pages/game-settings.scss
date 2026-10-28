@@ -40,55 +40,28 @@
     justify-content: space-between;
 }
 
-.game-themes {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.game-themes-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    >h2 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 600;
-    }
-}
-
-.choose-player {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.player-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    >h2 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: 600;
-    }
-}
-
+.game-themes,
+.choose-player,
 .board-size {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
+.game-themes-head,
+.player-head,
 .board-head {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 12px;
+    padding: 0;
 
-    >h2 {
-        margin: 0;
+    >span {
         font-size: 24px;
         font-weight: 600;
     }
