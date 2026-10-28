@@ -14,10 +14,10 @@ body.result-screen {
         align-items: center;
         margin-top: 60px;
         color: var(--text-color);
-        font-family: (--header-font);
+        font-family: var(--header-font);
 
         &__title {
-            margin: 1em 0;
+            margin: 26px 0;
             font-size: 26px;
             font-weight: 400;
         }
@@ -30,7 +30,7 @@ body.result-screen {
             box-sizing: border-box;
             padding: 12px;
             border-radius: var(--points-box-radius);
-            font-family: (--header-font);
+            font-family: var(--header-font);
             font-size: 20px;
 
             &__blue {
