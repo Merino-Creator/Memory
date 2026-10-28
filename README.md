@@ -64,6 +64,3 @@ Beenden kannst du den Server mit `Strg + C`.
 ## Lizenz
  
 Dieses Projekt dient Lernzwecken im Rahmen einer Ausbildung/eines Kurses.
-## Lizenz
-
-Dieses Projekt dient Lernzwecken im Rahmen einer Ausbildung/eines Kurses.
