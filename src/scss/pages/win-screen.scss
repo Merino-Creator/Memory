@@ -14,18 +14,26 @@ body.result-screen[data-theme="da-projects"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     font-family: var(--header-font);
 
-    >p {
-        margin: 0;
+    >h1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 0 40px 0;
         font-size: 24px;
+        font-weight: 400;
+    }
+
+    &__lead {
         color: white;
     }
 
-    >h1 {
-        font-size: 48px;
+    &__name {
         margin-top: 12px;
-        margin-bottom: 40px;
+        font-size: 48px;
+        font-weight: 700;
         color: var(--winner-color);
     }
 }
