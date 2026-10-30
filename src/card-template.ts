@@ -1,7 +1,7 @@
 /**
- * Erzeugt das HTML einer Memory-Karte mit Vorder- und Rückseite.
- * @param motif - Name des Motivs, das beim Umdrehen sichtbar wird
- * @returns das HTML der Karte als String
+ * Creates the HTML of a memory card with front and back side.
+ * @param motif - the name of the motif that becomes visible when the card is flipped
+ * @returns the HTML of the card as a string
  */
 export function renderCard(motif: string): string {
     return `

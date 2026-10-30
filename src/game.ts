@@ -3,56 +3,45 @@ import cardsData from './data/cards.json';
 
 import { renderCard } from './card-template';
 import { applyTheme } from './theme';
+import type { GameState, MotifKey, Player, Winner } from './types';
 
-type Player = 'blue' | 'orange';
-type Winner = Player | 'draw';
-type MotifKey = keyof typeof cardsData;
+const players: Player[] = ['blue', 'orange'];
+const pairSize: number = 2;
+const flippedClass: string = 'is-flipped';
+const defaultCardCount: number = 16;
+const defaultColumns: number = 4;
+const mismatchDelayMs: number = 600;
+const gameEndDelayMs: number = 800;
 
-interface GameState {
-    currentPlayer: Player;
-    points: Record<Player, number>;
-    flippedCards: HTMLButtonElement[];
-    isLocked: boolean;
-    matchedPairs: number;
-}
-
-const PLAYERS: Player[] = ['blue', 'orange'];
-const PAIR_SIZE: number = 2;
-const FLIPPED_CLASS: string = 'is-flipped';
-const DEFAULT_CARD_COUNT: number = 16;
-const DEFAULT_COLUMNS: number = 4;
-const MISMATCH_DELAY_MS: number = 600;
-const GAME_END_DELAY_MS: number = 800;
-
-const COLUMNS_BY_BOARD: Record<string, number> = {
+const columnsByBoard: Record<string, number> = {
     '16 cards': 4,
     '24 cards': 6,
     '36 cards': 6,
 };
 
-const MOTIF_KEYS_BY_THEME: Record<string, MotifKey> = {
+const motifKeysByTheme: Record<string, MotifKey> = {
     'code-vibes': 'it-motifs',
     'da-projects': 'da-motifs',
 };
 
-const DEFAULT_MOTIF_KEY: MotifKey = 'it-motifs';
+const defaultMotifKey: MotifKey = 'it-motifs';
 
-const BASE_URL: string = import.meta.env.BASE_URL.replace(/\/$/, '');
-const GAME_OVER_URL: string = `${BASE_URL}/pages/game-over.html`;
-const GAME_SETTINGS_URL: string = `${BASE_URL}/pages/game-settings.html`;
+const baseUrl: string = import.meta.env.BASE_URL.replace(/\/$/, '');
+const gameOverUrl: string = `${baseUrl}/pages/game-over.html`;
+const gameSettingsUrl: string = `${baseUrl}/pages/game-settings.html`;
 
-const CURRENT_THEME: string = applyTheme();
-const BOARD_LABEL: string = localStorage.getItem('board') ?? '';
-const CARD_COUNT: number = Number(BOARD_LABEL.split(' ')[0]) || DEFAULT_CARD_COUNT;
-const COLUMNS: number = COLUMNS_BY_BOARD[BOARD_LABEL] ?? DEFAULT_COLUMNS;
-const PAIRS_NEEDED: number = CARD_COUNT / PAIR_SIZE;
-const MOTIF_KEY: MotifKey = MOTIF_KEYS_BY_THEME[CURRENT_THEME] ?? DEFAULT_MOTIF_KEY;
+const currentTheme: string = applyTheme();
+const boardLabel: string = localStorage.getItem('board') ?? '';
+const cardCount: number = Number(boardLabel.split(' ')[0]) || defaultCardCount;
+const columns: number = columnsByBoard[boardLabel] ?? defaultColumns;
+const pairsNeeded: number = cardCount / pairSize;
+const motifKey: MotifKey = motifKeysByTheme[currentTheme] ?? defaultMotifKey;
 
-const GAME_BOARD: HTMLElement | null = document.querySelector<HTMLElement>('#gameBoard');
-const PLAYER_TURN_EL: HTMLDivElement | null = document.querySelector<HTMLDivElement>('.player-turn');
-const EXIT_DIALOG: HTMLDialogElement | null = document.querySelector<HTMLDialogElement>('#exitDialog');
+const gameBoard: HTMLElement | null = document.querySelector<HTMLElement>('#gameBoard');
+const playerTurnEl: HTMLDivElement | null = document.querySelector<HTMLDivElement>('.player-turn');
+const exitDialog: HTMLDialogElement | null = document.querySelector<HTMLDialogElement>('#exitDialog');
 
-const SCORE_ELEMENTS: Record<Player, HTMLSpanElement | null> = {
+const scoreElements: Record<Player, HTMLSpanElement | null> = {
     blue: document.querySelector<HTMLSpanElement>('#scoreBlue'),
     orange: document.querySelector<HTMLSpanElement>('#scoreOrange'),
 };
@@ -66,8 +55,8 @@ const state: GameState = {
 };
 
 /**
- * Liest die in den Settings gewählte Spielerfarbe.
- * @returns die Farbe, mit der das Spiel startet
+ * Reads the player color chosen on the settings page.
+ * @returns the color the game starts with
  */
 function getStartPlayer(): Player {
     const saved: string = (localStorage.getItem('player') ?? '').toLowerCase();
@@ -76,9 +65,9 @@ function getStartPlayer(): Player {
 }
 
 /**
- * Mischt eine Liste zufällig (Fisher-Yates).
- * @param items - die Liste, die gemischt werden soll
- * @returns eine neue, gemischte Liste
+ * Shuffles a list randomly (Fisher-Yates).
+ * @param items - the list to shuffle
+ * @returns a new, shuffled list
  */
 function shuffle<T>(items: T[]): T[] {
     const result: T[] = [...items];
@@ -91,19 +80,19 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 /**
- * Wählt die Motive für die Boardgröße aus und verdoppelt sie zu Paaren.
- * @returns die gemischte Liste aller Kartenmotive
+ * Picks the motifs for the board size and doubles them into pairs.
+ * @returns the shuffled list of all card motifs
  */
 function buildCardMotifs(): string[] {
-    const motifs: string[] = cardsData[MOTIF_KEY].slice(0, PAIRS_NEEDED);
+    const motifs: string[] = cardsData[motifKey].slice(0, pairsNeeded);
 
     return shuffle([...motifs, ...motifs]);
 }
 
-/** Zeigt die aktuellen Punkte beider Spieler an. */
+/** Shows the current points of both players. */
 function updateScore(): void {
-    PLAYERS.forEach((player) => {
-        const scoreEl: HTMLSpanElement | null = SCORE_ELEMENTS[player];
+    players.forEach((player) => {
+        const scoreEl: HTMLSpanElement | null = scoreElements[player];
 
         if (scoreEl) {
             scoreEl.textContent = String(state.points[player]);
@@ -111,28 +100,28 @@ function updateScore(): void {
     });
 }
 
-/** Zeigt den aktuellen Spieler im Header an. */
+/** Shows the current player in the header. */
 function updateCurrentPlayerDisplay(): void {
-    if (PLAYER_TURN_EL) {
-        PLAYER_TURN_EL.dataset.player = state.currentPlayer;
+    if (playerTurnEl) {
+        playerTurnEl.dataset.player = state.currentPlayer;
     }
 }
 
-/** Wechselt zum anderen Spieler. */
+/** Switches to the other player. */
 function switchPlayer(): void {
     state.currentPlayer = state.currentPlayer === 'blue' ? 'orange' : 'blue';
     updateCurrentPlayerDisplay();
 }
 
-/** Gibt die Karten frei, damit der nächste Zug beginnen kann. */
+/** Releases the cards so the next turn can begin. */
 function resetTurn(): void {
     state.flippedCards = [];
     state.isLocked = false;
 }
 
 /**
- * Ermittelt anhand der Punkte den Ausgang des Spiels.
- * @returns 'blue', 'orange' oder 'draw' bei Gleichstand
+ * Determines the outcome of the game from the points.
+ * @returns 'blue', 'orange' or 'draw' on a tie
  */
 function getWinner(): Winner {
     const { blue, orange } = state.points;
@@ -143,41 +132,41 @@ function getWinner(): Winner {
     return blue > orange ? 'blue' : 'orange';
 }
 
-/** Speichert das Ergebnis und öffnet den Game-Over-Screen. */
+/** Saves the result and opens the game over screen. */
 function endGame(): void {
     localStorage.setItem('scoreBlue', String(state.points.blue));
     localStorage.setItem('scoreOrange', String(state.points.orange));
     localStorage.setItem('winner', getWinner());
-    window.location.href = GAME_OVER_URL;
+    window.location.href = gameOverUrl;
 }
 
-/** Wertet ein gefundenes Paar: Punkt vergeben, Spielende prüfen. */
+/** Handles a found pair: awards a point and checks for the end of the game. */
 function handleMatch(): void {
     state.points[state.currentPlayer]++;
     updateScore();
     state.matchedPairs++;
     resetTurn();
 
-    if (state.matchedPairs === PAIRS_NEEDED) {
-        setTimeout(endGame, GAME_END_DELAY_MS);
+    if (state.matchedPairs === pairsNeeded) {
+        setTimeout(endGame, gameEndDelayMs);
     }
 }
 
 /**
- * Dreht zwei nicht passende Karten zurück und wechselt den Spieler.
- * @param first - die zuerst aufgedeckte Karte
- * @param second - die danach aufgedeckte Karte
+ * Turns two non-matching cards back and switches the player.
+ * @param first - the card that was flipped first
+ * @param second - the card that was flipped second
  */
 function handleMismatch(first: HTMLButtonElement, second: HTMLButtonElement): void {
     setTimeout(() => {
-        first.classList.remove(FLIPPED_CLASS);
-        second.classList.remove(FLIPPED_CLASS);
+        first.classList.remove(flippedClass);
+        second.classList.remove(flippedClass);
         resetTurn();
         switchPlayer();
-    }, MISMATCH_DELAY_MS);
+    }, mismatchDelayMs);
 }
 
-/** Vergleicht die beiden aufgedeckten Karten. */
+/** Compares the two flipped cards. */
 function checkMatch(): void {
     const [first, second] = state.flippedCards;
 
@@ -190,25 +179,25 @@ function checkMatch(): void {
 }
 
 /**
- * Deckt eine Karte auf und startet den Vergleich, sobald zwei offen sind.
- * @param card - die angeklickte Karte
+ * Flips a card and starts the comparison once two cards are open.
+ * @param card - the clicked card
  */
 function handleCardClick(card: HTMLButtonElement): void {
-    if (state.isLocked || card.classList.contains(FLIPPED_CLASS)) {
+    if (state.isLocked || card.classList.contains(flippedClass)) {
         return;
     }
-    card.classList.add(FLIPPED_CLASS);
+    card.classList.add(flippedClass);
     state.flippedCards.push(card);
 
-    if (state.flippedCards.length === PAIR_SIZE) {
+    if (state.flippedCards.length === pairSize) {
         checkMatch();
     }
 }
 
 /**
- * Erzeugt eine Karte mit Motiv und Klick-Handler.
- * @param motif - Name des Motivs der Karte
- * @returns das fertige Karten-Element
+ * Creates a card with its motif and click handler.
+ * @param motif - the name of the card's motif
+ * @returns the finished card element
  */
 function createCard(motif: string): HTMLButtonElement {
     const card: HTMLButtonElement = document.createElement('button');
@@ -221,38 +210,38 @@ function createCard(motif: string): HTMLButtonElement {
     return card;
 }
 
-/** Baut das Spielfeld mit allen Karten auf. */
+/** Builds the game board with all cards. */
 function renderBoard(): void {
-    if (!GAME_BOARD) {
+    if (!gameBoard) {
         return;
     }
-    GAME_BOARD.style.setProperty('--columns', String(COLUMNS));
-    buildCardMotifs().forEach((motif) => GAME_BOARD.appendChild(createCard(motif)));
+    gameBoard.style.setProperty('--columns', String(columns));
+    buildCardMotifs().forEach((motif) => gameBoard.appendChild(createCard(motif)));
 }
 
-/** Öffnet den Dialog zum Beenden des Spiels. */
+/** Opens the dialog for leaving the game. */
 function openExitDialog(): void {
-    EXIT_DIALOG?.showModal();
+    exitDialog?.showModal();
 }
 
-/** Schließt den Dialog und führt das Spiel fort. */
+/** Closes the dialog and continues the game. */
 function closeExitDialog(): void {
-    EXIT_DIALOG?.close();
+    exitDialog?.close();
 }
 
-/** Verlässt das Spiel und kehrt zu den Settings zurück. */
+/** Leaves the game and returns to the settings page. */
 function leaveGame(): void {
-    window.location.href = GAME_SETTINGS_URL;
+    window.location.href = gameSettingsUrl;
 }
 
-/** Verknüpft die Buttons des Exit-Dialogs mit ihren Aktionen. */
+/** Links the buttons of the exit dialog to their actions. */
 function bindExitDialog(): void {
     document.querySelector('#openExitBtn')?.addEventListener('click', openExitDialog);
     document.querySelector('#cancelExitBtn')?.addEventListener('click', closeExitDialog);
     document.querySelector('#confirmExitBtn')?.addEventListener('click', leaveGame);
 }
 
-/** Initialisiert das Spiel. */
+/** Initializes the game. */
 function init(): void {
     renderBoard();
     updateCurrentPlayerDisplay();

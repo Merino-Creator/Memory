@@ -3,24 +3,24 @@ export const THEME_KEYS: Record<string, string> = {
     'DA Projects theme': 'da-projects',
 };
 
-const DEFAULT_THEME: string = 'code-vibes';
+const defaultTheme: string = 'code-vibes';
 
-const GAME_DATA_KEYS: string[] = ['theme', 'player', 'board', 'winner', 'scoreBlue', 'scoreOrange'];
+const gameDataKeys: string[] = ['theme', 'player', 'board', 'winner', 'scoreBlue', 'scoreOrange'];
 
 /**
- * Liest das gewählte Theme aus dem localStorage.
- * @returns der Theme-Schlüssel, bei fehlender Auswahl das Standard-Theme
+ * Reads the chosen theme from localStorage.
+ * @returns the theme key, or the default theme if nothing was chosen
  */
 export function getCurrentTheme(): string {
     const label: string | null = localStorage.getItem('theme');
     const theme: string | undefined = label ? THEME_KEYS[label] : undefined;
 
-    return theme ?? DEFAULT_THEME;
+    return theme ?? defaultTheme;
 }
 
 /**
- * Setzt das aktuelle Theme als data-theme-Attribut am body.
- * @returns der Theme-Schlüssel, der gesetzt wurde
+ * Sets the current theme as the data-theme attribute on the body.
+ * @returns the theme key that was set
  */
 export function applyTheme(): string {
     const theme: string = getCurrentTheme();
@@ -29,7 +29,7 @@ export function applyTheme(): string {
     return theme;
 }
 
-/** Entfernt alle gespeicherten Spieldaten aus dem localStorage. */
+/** Removes all saved game data from localStorage. */
 export function resetGameData(): void {
-    GAME_DATA_KEYS.forEach((key) => localStorage.removeItem(key));
+    gameDataKeys.forEach((key) => localStorage.removeItem(key));
 }
