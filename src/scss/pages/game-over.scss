@@ -3,9 +3,13 @@ body.game-over-screen[data-theme="code-vibes"] {
 }
 
 body.result-screen {
-    .game-over-img {
-        height: 125px;
-        content: var(--game-over-img);
+    .game-over-headline>h1 {
+        margin: 0;
+        font-family: var(--header-font);
+        font-size: 120px;
+        font-weight: 700;
+        color: var(--game-over-color);
+        text-shadow: var(--game-over-shadow);
     }
 
     .score {

@@ -48,7 +48,8 @@ body[data-theme="code-vibes"] {
     --dialog-confirm-bg-hover: #dbfcf5;
     --dialog-confirm-color-hover: #4ED6BD;
 
-    --game-over-img: url("/assets/images/code-theme/game-over-screen/game-over.png");
+    --game-over-color: #4ED6BD;
+    --game-over-shadow: -2px -2px 4px rgba(255, 255, 255, 0.6);
 
     --confetti-img: url("/assets/images/code-theme/winner-screen/confetti.png");
     --confetti-img-big: url("/assets/images/code-theme/winner-screen/confetti-big.png");
