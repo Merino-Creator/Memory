@@ -131,24 +131,34 @@
     align-items: flex-end;
     gap: 40px;
 
-    &[data-preview="code-vibes"] .preview-img {
-        content: url("/assets/images/settings-screen/it-theme-logo.png");
-    }
-
-    &[data-preview="da-projects"] .preview-img {
-        content: url("/assets/images/settings-screen/da-theme-logo.png");
+    &[data-preview="code-vibes"] .preview-img--code-vibes,
+    &[data-preview="da-projects"] .preview-img--da-projects {
+        display: block;
     }
 }
 
-.settings-content:has(.custom-checkbox[data-preview-key="code-vibes"]:hover) .preview-img {
-    content: url("/assets/images/settings-screen/it-theme-logo.png");
+.settings-content:has(.custom-checkbox[data-preview-key="code-vibes"]:hover) {
+    .preview-img--code-vibes {
+        display: block;
+    }
+
+    .preview-img--da-projects {
+        display: none;
+    }
 }
 
-.settings-content:has(.custom-checkbox[data-preview-key="da-projects"]:hover) .preview-img {
-    content: url("/assets/images/settings-screen/da-theme-logo.png");
+.settings-content:has(.custom-checkbox[data-preview-key="da-projects"]:hover) {
+    .preview-img--da-projects {
+        display: block;
+    }
+
+    .preview-img--code-vibes {
+        display: none;
+    }
 }
 
 .preview-img {
+    display: none;
     width: 460px;
 }
 
