@@ -1,7 +1,8 @@
 import './scss/main.scss';
 
 import { THEME_KEYS, resetGameData } from './theme';
-import type { SelectionKey, Selections } from './types';
+import type { Selections } from './interfaces';
+import type { SelectionKey } from './types';
 
 const playBtn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>('.play-btn');
 const startBtn: HTMLButtonElement | null = document.querySelector<HTMLButtonElement>('.start-btn');

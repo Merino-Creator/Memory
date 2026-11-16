@@ -72,19 +72,12 @@ function scheduleNextScreen(): void {
     }, autoRedirectDelayMs);
 }
 
-/** Links the home button to the return to the settings page. */
-function bindBackButton(): void {
-    document.querySelector<HTMLButtonElement>('.back-btn')?.addEventListener('click', leaveToSettings);
-}
+// Set up the page as soon as the document is ready.
+document.addEventListener('DOMContentLoaded', applyTheme);
+document.addEventListener('DOMContentLoaded', applyWinner);
+document.addEventListener('DOMContentLoaded', showWinnerName);
+document.addEventListener('DOMContentLoaded', showFinalScore);
+document.addEventListener('DOMContentLoaded', scheduleNextScreen);
 
-/** Initializes the win, draw and game over screens. */
-function init(): void {
-    applyTheme();
-    applyWinner();
-    showWinnerName();
-    showFinalScore();
-    bindBackButton();
-    scheduleNextScreen();
-}
-
-init();
+// Return to the settings page when the home button is clicked.
+document.querySelector<HTMLButtonElement>('.back-btn')?.addEventListener('click', leaveToSettings);

@@ -3,7 +3,8 @@ import cardsData from './data/cards.json';
 
 import { renderCard } from './card-template';
 import { applyTheme } from './theme';
-import type { GameState, MotifKey, Player, Winner } from './types';
+import type { GameState } from './interfaces';
+import type { MotifKey, Player, Winner } from './types';
 
 const players: Player[] = ['blue', 'orange'];
 const pairSize: number = 2;
