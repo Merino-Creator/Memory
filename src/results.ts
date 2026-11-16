@@ -72,12 +72,10 @@ function scheduleNextScreen(): void {
     }, autoRedirectDelayMs);
 }
 
-// Set up the page as soon as the document is ready.
 document.addEventListener('DOMContentLoaded', applyTheme);
 document.addEventListener('DOMContentLoaded', applyWinner);
 document.addEventListener('DOMContentLoaded', showWinnerName);
 document.addEventListener('DOMContentLoaded', showFinalScore);
 document.addEventListener('DOMContentLoaded', scheduleNextScreen);
 
-// Return to the settings page when the home button is clicked.
 document.querySelector<HTMLButtonElement>('.back-btn')?.addEventListener('click', leaveToSettings);
